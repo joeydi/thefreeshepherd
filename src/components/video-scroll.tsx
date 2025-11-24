@@ -11,7 +11,7 @@ export default function VideoScroll() {
   useGSAP(() => {
     console.log(video1?.current?.duration)
 
-    const maxY = 3000 - window.innerHeight
+    const maxY = 100
 
     gsap
       .timeline({
@@ -27,7 +27,7 @@ export default function VideoScroll() {
                 maxY,
                 gsap.utils.mapRange(0, 0.25, 0, maxY, self.progress),
               )
-              video1.current.style.maskPosition = `50% ${-yPosition}px`
+              video1.current.style.maskPosition = `50% ${yPosition}%`
             }
           },
         },
@@ -89,7 +89,7 @@ export default function VideoScroll() {
                 maxY,
                 gsap.utils.mapRange(0, 0.25, 0, maxY, self.progress),
               )
-              video2.current.style.maskPosition = `50% ${-yPosition}px`
+              video2.current.style.maskPosition = `50% ${yPosition}%`
             }
           },
         },
@@ -151,7 +151,7 @@ export default function VideoScroll() {
                 maxY,
                 gsap.utils.mapRange(0, 0.25, 0, maxY, self.progress),
               )
-              video3.current.style.maskPosition = `50% ${-yPosition}px`
+              video3.current.style.maskPosition = `50% ${yPosition}%`
             }
           },
         },
@@ -213,7 +213,7 @@ export default function VideoScroll() {
                 maxY,
                 gsap.utils.mapRange(0, 0.25, 0, maxY, self.progress),
               )
-              video4.current.style.maskPosition = `50% ${-yPosition}px`
+              video4.current.style.maskPosition = `50% ${yPosition}%`
             }
           },
         },
