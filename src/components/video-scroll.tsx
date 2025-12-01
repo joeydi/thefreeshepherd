@@ -9,8 +9,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 export default function VideoScroll() {
   useGSAP(() => {
-    console.log(video1?.current?.duration)
-
     const maxY = 100
 
     gsap
