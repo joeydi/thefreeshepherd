@@ -107,7 +107,7 @@ export default function Header() {
           </ul>
         </div>
 
-        <style jsx>{`
+        <style>{`
           ${particles
             .map((particle) => {
               const startXPx = (particle.startXPercent / 100) * containerWidth - containerWidth / 2
