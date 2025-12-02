@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -8,6 +8,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 export default function VideoScrollMatteSnap() {
+  const [maskActive1, setMaskActive1] = useState(false)
+  const [maskActive2, setMaskActive2] = useState(false)
+  const [maskActive3, setMaskActive3] = useState(false)
+  const [maskActive4, setMaskActive4] = useState(false)
+
   useGSAP(() => {
     gsap
       .timeline({
@@ -17,14 +22,10 @@ export default function VideoScrollMatteSnap() {
           end: 'bottom top',
           scrub: true,
           onEnter: () => {
-            if (video1.current) {
-              video1.current.style.maskPosition = '50% 100%'
-            }
+            setMaskActive1(true)
           },
           onLeaveBack: () => {
-            if (video1.current) {
-              video1.current.style.maskPosition = '50% 0%'
-            }
+            setMaskActive1(false)
           },
         },
       })
@@ -79,14 +80,10 @@ export default function VideoScrollMatteSnap() {
           end: 'bottom top',
           scrub: true,
           onEnter: () => {
-            if (video2.current) {
-              video2.current.style.maskPosition = '50% 100%'
-            }
+            setMaskActive2(true)
           },
           onLeaveBack: () => {
-            if (video2.current) {
-              video2.current.style.maskPosition = '50% 0%'
-            }
+            setMaskActive2(false)
           },
         },
       })
@@ -141,14 +138,10 @@ export default function VideoScrollMatteSnap() {
           end: 'bottom top',
           scrub: true,
           onEnter: () => {
-            if (video3.current) {
-              video3.current.style.maskPosition = '50% 100%'
-            }
+            setMaskActive3(true)
           },
           onLeaveBack: () => {
-            if (video3.current) {
-              video3.current.style.maskPosition = '50% 0%'
-            }
+            setMaskActive3(false)
           },
         },
       })
@@ -203,14 +196,10 @@ export default function VideoScrollMatteSnap() {
           end: 'bottom top',
           scrub: true,
           onEnter: () => {
-            if (video4.current) {
-              video4.current.style.maskPosition = '50% 100%'
-            }
+            setMaskActive4(true)
           },
           onLeaveBack: () => {
-            if (video4.current) {
-              video4.current.style.maskPosition = '50% 0%'
-            }
+            setMaskActive4(false)
           },
         },
       })
@@ -284,12 +273,11 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-dither-crunched.png)',
+            maskImage: 'url(/ink-matte-crunched.jpg)',
             maskMode: 'luminance',
             maskSize: '100% auto',
-            transition: 'mask-position 1s steps(32, jump-none)',
           }}
-          className="fixed inset-0 block w-full h-screen object-cover"
+          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive1 ? 'mask-reveal' : 'mask-hide'}`}
           ref={video1}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene1.mp4"
           muted
@@ -306,12 +294,11 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-dither-crunched.png)',
+            maskImage: 'url(/ink-matte-crunched.jpg)',
             maskMode: 'luminance',
             maskSize: '100% auto',
-            transition: 'mask-position 1s steps(32, jump-none)',
           }}
-          className="fixed inset-0 block w-full h-screen object-cover"
+          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive2 ? 'mask-reveal' : 'mask-hide'}`}
           ref={video2}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene2.mp4"
           muted
@@ -328,12 +315,11 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-dither-crunched.png)',
+            maskImage: 'url(/ink-matte-crunched.jpg)',
             maskMode: 'luminance',
             maskSize: '100% auto',
-            transition: 'mask-position 1s steps(32, jump-none)',
           }}
-          className="fixed inset-0 block w-full h-screen object-cover"
+          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive3 ? 'mask-reveal' : 'mask-hide'}`}
           ref={video3}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene3.mp4"
           muted
@@ -350,12 +336,11 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-dither-crunched.png)',
+            maskImage: 'url(/ink-matte-crunched.jpg)',
             maskMode: 'luminance',
             maskSize: '100% auto',
-            transition: 'mask-position 1s steps(32, jump-none)',
           }}
-          className="fixed inset-0 block w-full h-screen object-cover"
+          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive4 ? 'mask-reveal' : 'mask-hide'}`}
           ref={video4}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene4.mp4"
           muted

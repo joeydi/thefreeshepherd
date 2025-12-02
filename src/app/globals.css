@@ -1,1 +1,28 @@
 @import 'tailwindcss';
+
+/* Mask reveal animations */
+@keyframes maskReveal {
+  from {
+    mask-position: 50% 0%;
+  }
+  to {
+    mask-position: 50% 100%;
+  }
+}
+
+@keyframes maskHide {
+  from {
+    mask-position: 50% 100%;
+  }
+  to {
+    mask-position: 50% 0%;
+  }
+}
+
+.mask-reveal {
+  animation: maskReveal 1s steps(32, jump-none) forwards;
+}
+
+.mask-hide {
+  animation: maskHide 1s steps(32, jump-none) forwards;
+}
