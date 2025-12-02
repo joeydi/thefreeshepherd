@@ -101,17 +101,27 @@ export default function Header() {
           <ul className="w-[25%] flex justify-end gap-8">
             <li>
               <a href="">
-                <img src="/icons/x.svg" width="22" height="20" />
+                <img src="/icons/x.svg" width="22" height="20" alt="Frame Interactive on X" />
               </a>
             </li>
             <li>
               <a href="">
-                <img src="/icons/instagram.svg" width="22" height="22" />
+                <img
+                  src="/icons/instagram.svg"
+                  width="22"
+                  height="22"
+                  alt="Frame Interactive on Instagram"
+                />
               </a>
             </li>
             <li>
               <a href="">
-                <img src="/icons/twitch.svg" width="22" height="24" />
+                <img
+                  src="/icons/twitch.svg"
+                  width="22"
+                  height="24"
+                  alt="Frame Interactive on Twitch"
+                />
               </a>
             </li>
           </ul>
