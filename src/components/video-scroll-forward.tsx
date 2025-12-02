@@ -10,7 +10,10 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 export default function VideoScrollForward() {
   useGSAP(() => {
     const maxY = 100
-    let lastProgress = 0
+    let lastProgress1 = 0
+    let lastProgress2 = 0
+    let lastProgress3 = 0
+    let lastProgress4 = 0
 
     gsap
       .timeline({
@@ -28,19 +31,15 @@ export default function VideoScrollForward() {
               )
               video1.current.style.maskPosition = `50% ${yPosition}%`
 
-              const progressDelta = Math.abs(self.progress - lastProgress)
+              const progressDelta = Math.abs(self.progress - lastProgress1)
               const timeDelta = gsap.utils.mapRange(0, 1, 0, video1.current.duration, progressDelta)
 
               const currentTime = (video1.current.currentTime + timeDelta) % video1.current.duration
 
-              console.log('video1.current.currentTime', video1.current.currentTime)
-              console.log('timeDelta', timeDelta)
-              console.log(currentTime)
-
               video1.current.currentTime = currentTime
             }
 
-            lastProgress = self.progress
+            lastProgress1 = self.progress
           },
         },
       })
@@ -93,19 +92,19 @@ export default function VideoScrollForward() {
                 gsap.utils.mapRange(0, 0.25, 0, maxY, self.progress),
               )
               video2.current.style.maskPosition = `50% ${yPosition}%`
+
+              const progressDelta = Math.abs(self.progress - lastProgress2)
+              const timeDelta = gsap.utils.mapRange(0, 1, 0, video2.current.duration, progressDelta)
+
+              const currentTime = (video2.current.currentTime + timeDelta) % video2.current.duration
+
+              video2.current.currentTime = currentTime
             }
+
+            lastProgress2 = self.progress
           },
         },
       })
-      .to(
-        video2.current,
-        {
-          currentTime: video2?.current?.duration || 3,
-          ease: 'none',
-          duration: 1,
-        },
-        0,
-      )
       .to(
         heading2.current,
         {
@@ -155,19 +154,19 @@ export default function VideoScrollForward() {
                 gsap.utils.mapRange(0, 0.25, 0, maxY, self.progress),
               )
               video3.current.style.maskPosition = `50% ${yPosition}%`
+
+              const progressDelta = Math.abs(self.progress - lastProgress3)
+              const timeDelta = gsap.utils.mapRange(0, 1, 0, video3.current.duration, progressDelta)
+
+              const currentTime = (video3.current.currentTime + timeDelta) % video3.current.duration
+
+              video3.current.currentTime = currentTime
             }
+
+            lastProgress3 = self.progress
           },
         },
       })
-      .to(
-        video3.current,
-        {
-          currentTime: video3?.current?.duration || 3,
-          ease: 'none',
-          duration: 1,
-        },
-        0,
-      )
       .to(
         heading3.current,
         {
@@ -217,19 +216,19 @@ export default function VideoScrollForward() {
                 gsap.utils.mapRange(0, 0.25, 0, maxY, self.progress),
               )
               video4.current.style.maskPosition = `50% ${yPosition}%`
+
+              const progressDelta = Math.abs(self.progress - lastProgress4)
+              const timeDelta = gsap.utils.mapRange(0, 1, 0, video4.current.duration, progressDelta)
+
+              const currentTime = (video4.current.currentTime + timeDelta) % video4.current.duration
+
+              video4.current.currentTime = currentTime
             }
+
+            lastProgress4 = self.progress
           },
         },
       })
-      .to(
-        video4.current,
-        {
-          currentTime: video4?.current?.duration || 3,
-          ease: 'none',
-          duration: 1,
-        },
-        0,
-      )
       .to(
         heading4.current,
         {
