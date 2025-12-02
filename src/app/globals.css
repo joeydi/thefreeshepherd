@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+@theme {
+  --font-sans: var(--font-roboto);
+  --font-serif: var(--font-inknut);
+}
+
 /* Mask reveal animations */
 @keyframes maskReveal {
   from {
