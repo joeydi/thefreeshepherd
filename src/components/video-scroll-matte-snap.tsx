@@ -12,7 +12,6 @@ export default function VideoScrollMatteSnap() {
     gsap
       .timeline({
         scrollTrigger: {
-          markers: true,
           trigger: panel1.current,
           start: 'top bottom',
           end: 'bottom top',
@@ -75,7 +74,6 @@ export default function VideoScrollMatteSnap() {
     gsap
       .timeline({
         scrollTrigger: {
-          markers: true,
           trigger: panel2.current,
           start: 'top bottom',
           end: 'bottom top',
@@ -286,7 +284,7 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-dither-noise.png)',
+            maskImage: 'url(/ink-matte-dither-crunched.png)',
             maskMode: 'luminance',
             maskSize: '100% auto',
             transition: 'mask-position 1s steps(32, jump-none)',
@@ -308,7 +306,7 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-dither-noise.png)',
+            maskImage: 'url(/ink-matte-dither-crunched.png)',
             maskMode: 'luminance',
             maskSize: '100% auto',
             transition: 'mask-position 1s steps(32, jump-none)',
@@ -330,7 +328,7 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-dither-noise.png)',
+            maskImage: 'url(/ink-matte-dither-crunched.png)',
             maskMode: 'luminance',
             maskSize: '100% auto',
             transition: 'mask-position 1s steps(32, jump-none)',
@@ -352,7 +350,7 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-dither-noise.png)',
+            maskImage: 'url(/ink-matte-dither-crunched.png)',
             maskMode: 'luminance',
             maskSize: '100% auto',
             transition: 'mask-position 1s steps(32, jump-none)',
