@@ -1,17 +1,26 @@
-import React from 'react'
-import Header from '@/components/header'
 import VideoHero from '@/components/video-hero'
 import VideoScrollMatteSnap from '@/components/video-scroll-matte-snap'
 
 export default async function Matte() {
   return (
     <main className="bg-[#282B2A] text-white">
-      {/* <Header /> */}
       <VideoHero />
       <VideoScrollMatteSnap />
       <div className="h-screen"></div>
-      <div className="bg-[#282B2A] relative z-1 h-screen flex items-center justify-center">
-        <h1 className="text-2xl">Trailer</h1>
+      <div
+        id="trailer"
+        className="bg-[#282B2A] relative z-2 h-screen flex items-center justify-center"
+      >
+        <iframe
+          className="w-[80%] max-w-[960px] h-auto aspect-video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/PVYIyiqCQqc?si=Shu6SkzmRWNR7kco&rel=0"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
       </div>
     </main>
   )
