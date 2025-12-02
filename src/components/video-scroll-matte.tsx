@@ -9,8 +9,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 export default function VideoScrollMatte() {
   useGSAP(() => {
-    const maxY = 100
-
     gsap
       .timeline({
         scrollTrigger: {
@@ -159,12 +157,20 @@ export default function VideoScrollMatte() {
           end: 'bottom top',
           scrub: true,
           onUpdate: (self) => {
+            const start = 0
+            const end = 0.25
+
+            // Normalize progress into 0–1 inside the 0–0.25 window
+            const t = Math.min(Math.max((self.progress - start) / (end - start), 0), 1)
+
+            // Snap t into 32 increments
+            const steps = 32
+            const snapped = Math.round(t * (steps - 1)) / (steps - 1)
+
+            // Convert to percent for your mask
+            const yPosition = snapped * 100
+
             if (video3.current) {
-              const yPosition = gsap.utils.clamp(
-                0,
-                maxY,
-                gsap.utils.mapRange(0, 0.25, 0, maxY, self.progress),
-              )
               video3.current.style.maskPosition = `50% ${yPosition}%`
             }
           },
@@ -221,12 +227,20 @@ export default function VideoScrollMatte() {
           end: 'bottom top',
           scrub: true,
           onUpdate: (self) => {
+            const start = 0
+            const end = 0.25
+
+            // Normalize progress into 0–1 inside the 0–0.25 window
+            const t = Math.min(Math.max((self.progress - start) / (end - start), 0), 1)
+
+            // Snap t into 32 increments
+            const steps = 32
+            const snapped = Math.round(t * (steps - 1)) / (steps - 1)
+
+            // Convert to percent for your mask
+            const yPosition = snapped * 100
+
             if (video4.current) {
-              const yPosition = gsap.utils.clamp(
-                0,
-                maxY,
-                gsap.utils.mapRange(0, 0.25, 0, maxY, self.progress),
-              )
               video4.current.style.maskPosition = `50% ${yPosition}%`
             }
           },
@@ -329,7 +343,7 @@ export default function VideoScrollMatte() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/mask1.jpg)',
+            maskImage: 'url(/ink-matte-invert.jpg)',
             maskMode: 'luminance',
             maskSize: '100% auto',
           }}
@@ -345,7 +359,7 @@ export default function VideoScrollMatte() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/mask1.jpg)',
+            maskImage: 'url(/ink-matte-invert.jpg)',
             maskMode: 'luminance',
             maskSize: '100% auto',
           }}
