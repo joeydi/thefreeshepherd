@@ -3,6 +3,8 @@
 @theme {
   --font-sans: var(--font-roboto);
   --font-serif: var(--font-inknut);
+
+  --animate-pulse: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* Mask reveal animations */
@@ -22,6 +24,17 @@
   to {
     mask-position: 50% 0%;
   }
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* Initial state - no animation */
+.mask-initial {
+  mask-position: 50% 0%;
 }
 
 .mask-reveal {

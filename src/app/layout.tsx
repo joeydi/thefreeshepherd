@@ -1,7 +1,7 @@
-import React from 'react'
 import './globals.css'
 import { Roboto } from 'next/font/google'
 import { Inknut_Antiqua } from 'next/font/google'
+import Header from '@/components/header'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -25,7 +25,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en" className={`${roboto.variable} ${inknut.variable}`}>
-      <body className="bg-[#282B2A]">{children}</body>
+      <body className="bg-[#282B2A]">
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }

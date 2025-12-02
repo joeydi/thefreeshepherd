@@ -8,10 +8,23 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 export default function VideoScrollMatteSnap() {
-  const [maskActive1, setMaskActive1] = useState(false)
-  const [maskActive2, setMaskActive2] = useState(false)
-  const [maskActive3, setMaskActive3] = useState(false)
-  const [maskActive4, setMaskActive4] = useState(false)
+  const [maskActive1, setMaskActive1] = useState<boolean | null>(null)
+  const [maskActive2, setMaskActive2] = useState<boolean | null>(null)
+  const [maskActive3, setMaskActive3] = useState<boolean | null>(null)
+  const [maskActive4, setMaskActive4] = useState<boolean | null>(null)
+
+  const panel1 = useRef<HTMLDivElement>(null)
+  const video1 = useRef<HTMLVideoElement>(null)
+  const heading1 = useRef<HTMLHeadingElement>(null)
+  const panel2 = useRef<HTMLDivElement>(null)
+  const video2 = useRef<HTMLVideoElement>(null)
+  const heading2 = useRef<HTMLHeadingElement>(null)
+  const panel3 = useRef<HTMLDivElement>(null)
+  const video3 = useRef<HTMLVideoElement>(null)
+  const heading3 = useRef<HTMLHeadingElement>(null)
+  const panel4 = useRef<HTMLDivElement>(null)
+  const video4 = useRef<HTMLVideoElement>(null)
+  const heading4 = useRef<HTMLHeadingElement>(null)
 
   useGSAP(() => {
     gsap
@@ -25,6 +38,8 @@ export default function VideoScrollMatteSnap() {
             setMaskActive1(true)
           },
           onLeaveBack: () => {
+            console.log('onLeaveBack')
+
             setMaskActive1(false)
           },
         },
@@ -38,39 +53,6 @@ export default function VideoScrollMatteSnap() {
         },
         0,
       )
-    // .to(
-    //   heading1.current,
-    //   {
-    //     y: window.innerHeight,
-    //     ease: 'none',
-    //     duration: 1,
-    //   },
-    //   0,
-    // )
-    // .fromTo(
-    //   heading1.current,
-    //   {
-    //     opacity: 0,
-    //     filter: 'blur(20px)',
-    //   },
-    //   {
-    //     opacity: 1,
-    //     filter: 'blur(0px)',
-    //     ease: 'none',
-    //     duration: 0.125,
-    //   },
-    //   0.125,
-    // )
-    // .to(
-    //   heading1.current,
-    //   {
-    //     opacity: 0,
-    //     filter: 'blur(20px)',
-    //     ease: 'none',
-    //     duration: 0.125,
-    //   },
-    //   0.5,
-    // )
 
     gsap
       .timeline({
@@ -96,39 +78,6 @@ export default function VideoScrollMatteSnap() {
         },
         0,
       )
-    // .to(
-    //   heading2.current,
-    //   {
-    //     y: window.innerHeight,
-    //     ease: 'none',
-    //     duration: 1,
-    //   },
-    //   0,
-    // )
-    // .fromTo(
-    //   heading2.current,
-    //   {
-    //     opacity: 0,
-    //     filter: 'blur(20px)',
-    //   },
-    //   {
-    //     opacity: 1,
-    //     filter: 'blur(0px)',
-    //     ease: 'none',
-    //     duration: 0.125,
-    //   },
-    //   0.125,
-    // )
-    // .to(
-    //   heading2.current,
-    //   {
-    //     opacity: 0,
-    //     filter: 'blur(20px)',
-    //     ease: 'none',
-    //     duration: 0.125,
-    //   },
-    //   0.5,
-    // )
 
     gsap
       .timeline({
@@ -154,39 +103,6 @@ export default function VideoScrollMatteSnap() {
         },
         0,
       )
-    // .to(
-    //   heading3.current,
-    //   {
-    //     y: window.innerHeight,
-    //     ease: 'none',
-    //     duration: 1,
-    //   },
-    //   0,
-    // )
-    // .fromTo(
-    //   heading3.current,
-    //   {
-    //     opacity: 0,
-    //     filter: 'blur(20px)',
-    //   },
-    //   {
-    //     opacity: 1,
-    //     filter: 'blur(0px)',
-    //     ease: 'none',
-    //     duration: 0.125,
-    //   },
-    //   0.125,
-    // )
-    // .to(
-    //   heading3.current,
-    //   {
-    //     opacity: 0,
-    //     filter: 'blur(20px)',
-    //     ease: 'none',
-    //     duration: 0.125,
-    //   },
-    //   0.5,
-    // )
 
     gsap
       .timeline({
@@ -212,53 +128,7 @@ export default function VideoScrollMatteSnap() {
         },
         0,
       )
-    // .to(
-    //   heading4.current,
-    //   {
-    //     y: window.innerHeight,
-    //     ease: 'none',
-    //     duration: 1,
-    //   },
-    //   0,
-    // )
-    // .fromTo(
-    //   heading4.current,
-    //   {
-    //     opacity: 0,
-    //     filter: 'blur(20px)',
-    //   },
-    //   {
-    //     opacity: 1,
-    //     filter: 'blur(0px)',
-    //     ease: 'none',
-    //     duration: 0.125,
-    //   },
-    //   0.125,
-    // )
-    // .to(
-    //   heading4.current,
-    //   {
-    //     opacity: 0,
-    //     filter: 'blur(20px)',
-    //     ease: 'none',
-    //     duration: 0.125,
-    //   },
-    //   0.5,
-    // )
-  })
-
-  const panel1 = useRef<HTMLDivElement>(null)
-  const video1 = useRef<HTMLVideoElement>(null)
-  const heading1 = useRef<HTMLHeadingElement>(null)
-  const panel2 = useRef<HTMLDivElement>(null)
-  const video2 = useRef<HTMLVideoElement>(null)
-  const heading2 = useRef<HTMLHeadingElement>(null)
-  const panel3 = useRef<HTMLDivElement>(null)
-  const video3 = useRef<HTMLVideoElement>(null)
-  const heading3 = useRef<HTMLHeadingElement>(null)
-  const panel4 = useRef<HTMLDivElement>(null)
-  const video4 = useRef<HTMLVideoElement>(null)
-  const heading4 = useRef<HTMLHeadingElement>(null)
+  }, [])
 
   return (
     <div className="relative h-[400vh]">
@@ -273,11 +143,12 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-crunched.jpg)',
+            maskImage: 'url(/ink-matte-flat-bottom.jpg)',
             maskMode: 'luminance',
-            maskSize: '100% auto',
+            maskSize: '100% 3200%',
+            maskPosition: '50% 0%',
           }}
-          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive1 ? 'mask-reveal' : 'mask-hide'}`}
+          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive1 === null ? 'mask-initial' : maskActive1 ? 'mask-reveal' : 'mask-hide'}`}
           ref={video1}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene1.mp4"
           muted
@@ -294,11 +165,11 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-crunched.jpg)',
+            maskImage: 'url(/ink-matte-flat-bottom.jpg)',
             maskMode: 'luminance',
-            maskSize: '100% auto',
+            maskSize: '100% 3200%',
           }}
-          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive2 ? 'mask-reveal' : 'mask-hide'}`}
+          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive2 === null ? 'mask-initial' : maskActive2 ? 'mask-reveal' : 'mask-hide'}`}
           ref={video2}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene2.mp4"
           muted
@@ -315,11 +186,11 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-crunched.jpg)',
+            maskImage: 'url(/ink-matte-flat-bottom.jpg)',
             maskMode: 'luminance',
-            maskSize: '100% auto',
+            maskSize: '100% 3200%',
           }}
-          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive3 ? 'mask-reveal' : 'mask-hide'}`}
+          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive3 === null ? 'mask-initial' : maskActive3 ? 'mask-reveal' : 'mask-hide'}`}
           ref={video3}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene3.mp4"
           muted
@@ -336,11 +207,11 @@ export default function VideoScrollMatteSnap() {
         </h2>
         <video
           style={{
-            maskImage: 'url(/ink-matte-crunched.jpg)',
+            maskImage: 'url(/ink-matte-flat-bottom.jpg)',
             maskMode: 'luminance',
-            maskSize: '100% auto',
+            maskSize: '100% 3200%',
           }}
-          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive4 ? 'mask-reveal' : 'mask-hide'}`}
+          className={`fixed inset-0 block w-full h-screen object-cover ${maskActive4 === null ? 'mask-initial' : maskActive4 ? 'mask-reveal' : 'mask-hide'}`}
           ref={video4}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene4.mp4"
           muted

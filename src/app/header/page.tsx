@@ -6,7 +6,6 @@ import VideoScrollMatteSnap from '@/components/video-scroll-matte-snap'
 export default async function Matte() {
   return (
     <main className="bg-[#282B2A] text-white">
-      <Header />
       <VideoHero />
       <VideoScrollMatteSnap />
       <div className="h-screen"></div>
