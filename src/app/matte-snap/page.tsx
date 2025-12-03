@@ -1,5 +1,6 @@
 import VideoHero from '@/components/video-hero'
 import VideoScrollMatteSnap from '@/components/video-scroll-matte-snap'
+import MailchimpScript from '@/components/mailchimp-script'
 
 export default async function Matte() {
   return (
@@ -21,6 +22,13 @@ export default async function Matte() {
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
+      </div>
+      <div
+        id="newsletter"
+        className="bg-[#282B2A] relative z-2 h-screen flex flex-col gap-8 items-center justify-center"
+      >
+        <h2 className="text-2xl font-serif">Newsletter signup</h2>
+        <MailchimpScript />
       </div>
     </main>
   )

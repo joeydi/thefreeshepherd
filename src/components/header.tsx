@@ -48,15 +48,15 @@ export default function Header() {
   return (
     <div className="z-10 fixed w-full left-0 top-0 p-8">
       <div ref={containerRef} className="relative py-4 px-8">
-        <div className="absolute z-1 inset-0 rounded-full bg-linear-to-b from-white/50 to-white/20 backdrop-blur-md inset-ring-1 inset-ring-white/20" />
+        <div className="absolute z-1 inset-0 rounded-fluid-xs bg-linear-to-b from-white/50 to-white/20 backdrop-blur-md inset-ring-1 inset-ring-white/20" />
         {/* Outer glow layers */}
-        <div className="absolute inset-0 scale-120 rounded-full bg-[#5dede3]/30 blur-3xl animate-pulse" />
+        <div className="absolute inset-0 scale-120 rounded-fluid-xs bg-[#5dede3]/30 blur-3xl animate-pulse" />
         <div
-          className="absolute inset-0 scale-110 rounded-full bg-[#5dede3]/20 blur-2xl animate-pulse"
+          className="absolute inset-0 scale-110 rounded-fluid-xs bg-[#5dede3]/20 blur-2xl animate-pulse"
           style={{ animationDelay: '1.33s' }}
         />
         <div
-          className="absolute inset-0 scale-100 rounded-full bg-[#5dede3]/10 blur-lg animate-pulse"
+          className="absolute inset-0 scale-100 rounded-fluid-xs bg-[#5dede3]/10 blur-lg animate-pulse"
           style={{ animationDelay: '2.66s' }}
         />
 
@@ -66,7 +66,7 @@ export default function Header() {
             return (
               <div
                 key={particle.id}
-                className="absolute left-1/2 top-1/2 rounded-full bg-white"
+                className="absolute left-1/2 top-1/2 rounded-fluid-xs bg-white"
                 style={{
                   width: `${particle.size}px`,
                   height: `${particle.size}px`,
@@ -81,9 +81,9 @@ export default function Header() {
         </div>
 
         <div className="relative z-1 flex justify-between gap-8 items-center text-[#282B2A] font-serif">
-          <a href="/matte-snap" className="w-[25%] font-semibold">
+          <Link href="/matte-snap" className="w-[25%] font-semibold">
             The Free Shepherd
-          </a>
+          </Link>
           <ul className="w-[50%] flex justify-center gap-4 font-light">
             <li>
               <Link href="/matte-snap#trailer">Trailer</Link>
