@@ -5,6 +5,8 @@
   --font-serif: var(--font-inknut);
 
   --animate-pulse: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  --ease-out-sharp: cubic-bezier(0, 1, 0.2, 1);
 }
 
 @utility rounded-fluid-xs {
