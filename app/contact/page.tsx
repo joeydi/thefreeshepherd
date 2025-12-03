@@ -3,13 +3,13 @@ import { GlowingButton } from '@/components/glowing-button'
 
 export default async function Contact() {
   return (
-    <main className="bg-[#282B2A] text-white relative z-1 h-screen min-h-fit flex items-center justify-center pt-48 pb-32">
-      <BlurUp className="flex flex-col gap-8">
-        <h1 className="text-2xl font-serif">Get in touch</h1>
+    <main className="bg-[#282B2A] text-white relative z-1 h-screen min-h-fit flex items-center justify-center pt-48 pb-3 px-16">
+      <BlurUp className="w-full flex flex-col items-center gap-8">
+        <h1 className="text-2xl font-serif text-center">Get in touch</h1>
         <form
           action="https://formspree.io/f/mwpgbrwp"
           method="POST"
-          className="w-xl p-8 rounded-fluid-xs flex flex-col gap-4 inset-ring-1 inset-ring-white/10 bg-white/10"
+          className="w-full max-w-2xl p-8 rounded-fluid-xs flex flex-col gap-4 inset-ring-1 inset-ring-white/10 bg-white/10"
         >
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="font-serif font-light">

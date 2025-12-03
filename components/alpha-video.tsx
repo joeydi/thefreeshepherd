@@ -43,7 +43,7 @@ export const AlphaVideo = ({ src }: { src: string }) => {
       ></video>
       <canvas
         ref={canvasRef}
-        className="pointer-events-none absolute left-0 top-0 aspect-video w-full"
+        className="pointer-events-none absolute left-0 bottom-0 aspect-video w-full"
         width="1920"
         height="1080"
       />

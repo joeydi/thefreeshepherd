@@ -8,7 +8,7 @@ export default function MailchimpScript() {
         method="post"
         id="mc-embedded-subscribe-form"
         name="mc-embedded-subscribe-form"
-        className="w-xl p-8 rounded-fluid-xs flex flex-col gap-4 inset-ring-1 inset-ring-white/10 bg-white/10"
+        className="p-8 rounded-fluid-xs flex flex-col gap-4 inset-ring-1 inset-ring-white/10 bg-white/10"
         target="_blank"
       >
         <div className="flex flex-col gap-2">

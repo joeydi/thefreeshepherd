@@ -2,6 +2,7 @@ import './globals.css'
 import { Roboto } from 'next/font/google'
 import { Inknut_Antiqua } from 'next/font/google'
 import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -24,10 +25,11 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en" className={`${roboto.variable} ${inknut.variable}`}>
-      <body className="bg-[#282B2A]">
+    <html lang="en" className={`${roboto.variable} ${inknut.variable} scroll-pt-36`}>
+      <body className="bg-[#282B2A] scroll-pt-32">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

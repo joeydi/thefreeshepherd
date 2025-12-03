@@ -26,6 +26,7 @@ export function FeatureCards({ cards }: FeatureCardsProps) {
               src={card.image}
               alt={card.title}
               fill
+              unoptimized
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </div>

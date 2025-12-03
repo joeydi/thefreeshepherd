@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState, useRef, useCallback } from 'react'
 
@@ -70,7 +71,9 @@ export default function Header() {
                 style={{
                   width: `${particle.size}px`,
                   height: `${particle.size}px`,
-                  boxShadow: `0 0 ${particle.size * 2}px ${particle.size}px rgba(255, 255, 255, 0.6)`,
+                  boxShadow: `0 0 ${particle.size * 2}px ${
+                    particle.size
+                  }px rgba(255, 255, 255, 0.6)`,
                   transform: `translate(calc(-50% + ${startXPx}px), -50%)`,
                   animation: `radial-float-${particle.id} ${particle.duration}s ease-out infinite`,
                   animationDelay: `${particle.delay}s`,
@@ -89,10 +92,10 @@ export default function Header() {
               <Link href="/matte-snap#trailer">Trailer</Link>
             </li>
             <li>
-              <Link href="/matte-snap#newsletter">Newsletter</Link>
+              <Link href="/matte-snap#updates">Updates</Link>
             </li>
             <li>
-              <Link href="/updates">Updates</Link>
+              <Link href="/matte-snap#newsletter">Newsletter</Link>
             </li>
             <li>
               <Link href="/contact">Contact</Link>
@@ -101,12 +104,12 @@ export default function Header() {
           <ul className="w-[25%] flex justify-end gap-8">
             <li>
               <a href="">
-                <img src="/icons/x.svg" width="22" height="20" alt="Frame Interactive on X" />
+                <Image src="/icons/x.svg" width="22" height="20" alt="Frame Interactive on X" />
               </a>
             </li>
             <li>
               <a href="">
-                <img
+                <Image
                   src="/icons/instagram.svg"
                   width="22"
                   height="22"
@@ -116,7 +119,7 @@ export default function Header() {
             </li>
             <li>
               <a href="">
-                <img
+                <Image
                   src="/icons/twitch.svg"
                   width="22"
                   height="24"
@@ -142,7 +145,9 @@ export default function Header() {
                 }
                 15% {
                   opacity: 1;
-                  transform: translate(calc(-50% + ${startXPx}px), -50%) translate(${endX * 0.1}px, ${endY * 0.1}px) scale(1);
+                  transform: translate(calc(-50% + ${startXPx}px), -50%) translate(${
+                endX * 0.1
+              }px, ${endY * 0.1}px) scale(1);
                 }
                 100% {
                   opacity: 0;
