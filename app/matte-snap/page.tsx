@@ -11,21 +11,21 @@ const cards = [
     description:
       'A deep look into the creative process behind the haunting, cello-driven soundscape that shapes the soul of The Free Shepherd.',
     image: '/excerpt-zoe-keating.jpg',
-    link: '/feature-one',
+    link: '/updates/test',
   },
   {
     title: 'Your new best friend',
     description:
       'Meet the loyal sheepdog at the heart of the journey—agile, expressive, and ready to lead you through wild terrain and quiet mysteries.',
     image: '/excerpt-shepherd.jpg',
-    link: '/feature-two',
+    link: '/updates/test',
   },
   {
     title: 'Dev Log: Winter 2026',
     description:
       'An inside look at new environments, worldbuilding tools, and the evolving systems shaping the next chapter of development.',
     image: '/excerpt-devlog.jpg',
-    link: '/feature-two',
+    link: '/updates/test',
   },
 ]
 

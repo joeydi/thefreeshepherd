@@ -19,11 +19,13 @@ export default function VideoIntro() {
       split.words,
       {
         opacity: 0,
-        filter: 'blur(30px)',
+        filter: 'blur(40px)',
+        color: '#5dede3',
       },
       {
         opacity: 1,
         filter: 'blur(0px)',
+        color: '#ffffff',
         ease: 'expo.out',
         duration: 1,
         stagger: 0.05,
