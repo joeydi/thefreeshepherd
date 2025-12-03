@@ -3,7 +3,7 @@ import { GlowingButton } from '@/components/glowing-button'
 
 export default async function Contact() {
   return (
-    <main className="bg-[#282B2A] text-white relative z-1 h-screen min-h-fit flex items-center justify-center pt-48 pb-3 px-16">
+    <main className="bg-[#282B2A] text-white relative z-1 h-screen min-h-fit flex items-center justify-center pt-48 pb-32 px-16">
       <BlurUp className="w-full flex flex-col items-center gap-8">
         <h1 className="text-2xl font-serif text-center">Get in touch</h1>
         <form
