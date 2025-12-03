@@ -7,6 +7,42 @@
   --animate-pulse: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+@utility rounded-fluid-xs {
+  border-radius: clamp(0.5rem, 0.71vw + 0.36rem, 1rem);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: clamp(0.75rem, 1.07vw + 0.54rem, 1.5rem);
+    corner-shape: superellipse(1.5);
+  }
+}
+
+@utility rounded-fluid-sm {
+  border-radius: clamp(0.62rem, 0.89vw + 0.45rem, 1.25rem);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: clamp(1rem, 1.43vw + 0.71rem, 2rem);
+    corner-shape: superellipse(1.5);
+  }
+}
+
+@utility rounded-fluid-md {
+  border-radius: clamp(1rem, 1.43vw + 0.71rem, 2rem);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: clamp(1.5rem, 2.14vw + 1.07rem, 3rem);
+    corner-shape: superellipse(1.5);
+  }
+}
+
+@utility rounded-fluid-lg {
+  border-radius: clamp(1.31rem, 1.88vw + 0.94rem, 2.62rem);
+
+  @supports (corner-shape: superellipse(1.5)) {
+    border-radius: clamp(2rem, 2.86vw + 1.43rem, 4rem);
+    corner-shape: superellipse(1.5);
+  }
+}
+
 /* Mask reveal animations */
 @keyframes maskReveal {
   from {
