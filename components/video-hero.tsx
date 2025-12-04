@@ -93,7 +93,7 @@ export default function VideoHero() {
           </div>
           <div ref={ctaRef} className="z-1">
             <BlurUp className="p-4 pl-8 rounded-fluid-xs bg-black/10 inset-ring-1 inset-ring-white/10 backdrop-blur-md flex items-center gap-4">
-              <span className="text-lg font-semibold mr-auto">Coming Spring 2027</span>
+              <span className="text-lg font-semibold mr-auto text-white">Coming Spring 2027</span>
               <GlowingButton className="min-w-52">
                 <Image
                   className="size-8"

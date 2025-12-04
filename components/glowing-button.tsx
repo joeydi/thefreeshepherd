@@ -11,7 +11,7 @@ export function GlowingButton({
       className={cn('relative py-3 px-5 group cursor-pointer', className)}
       {...rest}
     >
-      <span className="flex items-center justify-center gap-4 relative z-2 font-bold font-serif">
+      <span className="flex items-center justify-center gap-4 relative z-2 font-bold font-serif text-white">
         {children}
       </span>
       <div className="absolute z-1 inset-0 rounded-sm bg-linear-to-b from-white/50 to-white/20 backdrop-blur-md inset-ring-1 inset-ring-white/20" />
