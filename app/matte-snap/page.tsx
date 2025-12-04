@@ -4,6 +4,7 @@ import MailchimpForm from '@/components/mailchimp-form'
 import { BlurUp } from '@/components/blur-up'
 import { FeatureCards } from '@/components/feature-cards'
 import VideoIntro from '@/components/video-intro'
+import NewsletterSignup from '@/components/newsletter-signup'
 
 const cards = [
   {
@@ -36,11 +37,11 @@ export default async function Matte() {
       <VideoIntro />
       <VideoScrollMatteSnap />
       <div className="h-screen"></div>
-      <div className="bg-[#282B2A] relative z-2 py-48 px-16 flex flex-col gap-48">
+      <div className="relative z-2 flex flex-col gap-48 bg-[#282B2A] px-16 py-48">
         <div id="trailer" className="flex items-center justify-center">
           <BlurUp className="w-[80%] max-w-7xl">
             <iframe
-              className="w-full h-auto aspect-video"
+              className="rounded-fluid-xs aspect-video h-auto w-full shadow-lg"
               width="560"
               height="315"
               src="https://www.youtube.com/embed/PVYIyiqCQqc?si=Shu6SkzmRWNR7kco&rel=0"
@@ -52,17 +53,14 @@ export default async function Matte() {
           </BlurUp>
         </div>
         <div id="updates" className="flex items-center justify-center">
-          <BlurUp className="flex flex-col gap-8 items-center">
-            <h2 className="text-2xl font-serif">Latest updates</h2>
+          <BlurUp className="flex flex-col items-center gap-8">
+            <h2 className="font-serif text-2xl">Latest updates</h2>
             <FeatureCards cards={cards} />
           </BlurUp>
         </div>
-        <div id="newsletter" className="w-full max-w-2xl self-center">
-          <BlurUp className="flex flex-col gap-8">
-            <h2 className="text-2xl font-serif text-center">Newsletter signup</h2>
-            <MailchimpForm />
-          </BlurUp>
-        </div>
+        <BlurUp id="newsletter">
+          <NewsletterSignup />
+        </BlurUp>
       </div>
     </main>
   )
