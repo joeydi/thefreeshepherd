@@ -1,6 +1,6 @@
 import VideoHero from '@/components/video-hero'
 import VideoScrollMatteSnap from '@/components/video-scroll-matte-snap'
-import MailchimpScript from '@/components/mailchimp-script'
+import MailchimpForm from '@/components/mailchimp-form'
 import { BlurUp } from '@/components/blur-up'
 import { FeatureCards } from '@/components/feature-cards'
 import VideoIntro from '@/components/video-intro'
@@ -60,7 +60,7 @@ export default async function Matte() {
         <div id="newsletter" className="w-full max-w-2xl self-center">
           <BlurUp className="flex flex-col gap-8">
             <h2 className="text-2xl font-serif text-center">Newsletter signup</h2>
-            <MailchimpScript />
+            <MailchimpForm />
           </BlurUp>
         </div>
       </div>
