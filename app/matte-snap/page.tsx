@@ -1,6 +1,5 @@
 import VideoHero from '@/components/video-hero'
 import VideoScrollMatteSnap from '@/components/video-scroll-matte-snap'
-import MailchimpForm from '@/components/mailchimp-form'
 import { BlurUp } from '@/components/blur-up'
 import { FeatureCards } from '@/components/feature-cards'
 import VideoIntro from '@/components/video-intro'
