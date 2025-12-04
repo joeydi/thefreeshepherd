@@ -73,16 +73,16 @@ export default function VideoHero() {
     <div className="relative z-1">
       <div
         ref={sectionRef}
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative flex h-screen items-center justify-center overflow-hidden"
       >
         <h1 className="text-2xl">The Free Shepard</h1>
         <Image className="object-cover" ref={bg1Ref} src="/hero-bg.jpg" fill unoptimized alt="" />
         <Image className="object-cover" ref={bg2Ref} src="/hero-bg.png" fill unoptimized alt="" />
-        <div className="absolute left-[32%] top-[34%] w-[36%] flex flex-col gap-8">
+        <div className="absolute top-[34%] left-[32%] flex w-[36%] flex-col gap-8">
           <div ref={logoRef}>
-            <BlurUp className="w-[50%] h-auto">
+            <BlurUp className="h-auto w-[50%]">
               <Image
-                className="w-full h-auto"
+                className="h-auto w-full"
                 src="/logo.svg"
                 width="343"
                 height="230"
@@ -92,8 +92,8 @@ export default function VideoHero() {
             </BlurUp>
           </div>
           <div ref={ctaRef} className="z-1">
-            <BlurUp className="p-4 pl-8 rounded-fluid-xs bg-black/10 inset-ring-1 inset-ring-white/10 backdrop-blur-md flex items-center gap-4">
-              <span className="text-lg font-semibold mr-auto text-white">Coming Spring 2027</span>
+            <BlurUp className="rounded-fluid-xs flex items-center gap-4 bg-black/10 p-4 pl-8 inset-ring-1 inset-ring-white/10 backdrop-blur-md">
+              <span className="mr-auto text-lg font-semibold text-white">Coming Spring 2027</span>
               <GlowingButton className="min-w-52">
                 <Image
                   className="size-8"
@@ -120,11 +120,11 @@ export default function VideoHero() {
           </div>
         </div>
         <AlphaVideo src="/hero-clip-1-alpha.mp4" />
-        <div className="absolute left-0 bottom-0 w-full h-[20vh] bg-linear-to-b from-[#282B2A]/0 to-[#282B2A]"></div>
-        <div className="absolute left-0 bottom-0 w-full h-[10vh] bg-linear-to-b from-[#282B2A]/0 to-[#282B2A]"></div>
+        <div className="absolute bottom-0 left-0 h-[20vh] w-full bg-linear-to-b from-[#282B2A]/0 to-[#282B2A]"></div>
+        <div className="absolute bottom-0 left-0 h-[10vh] w-full bg-linear-to-b from-[#282B2A]/0 to-[#282B2A]"></div>
       </div>
-      <div className="absolute left-0 top-full w-full h-[20vh] bg-linear-to-t from-[#282B2A]/0 to-[#282B2A]"></div>
-      <div className="absolute left-0 top-full w-full h-[10vh] bg-linear-to-t from-[#282B2A]/0 to-[#282B2A]"></div>
+      <div className="absolute top-full left-0 h-[20vh] w-full bg-linear-to-t from-[#282B2A]/0 to-[#282B2A]"></div>
+      <div className="absolute top-full left-0 h-[10vh] w-full bg-linear-to-t from-[#282B2A]/0 to-[#282B2A]"></div>
     </div>
   )
 }

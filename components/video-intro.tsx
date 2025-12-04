@@ -40,19 +40,15 @@ export default function VideoIntro() {
         end: 'bottom top',
         scrub: true,
         onEnter: () => {
-          console.log('onEnter')
           splitTween.play()
         },
         onEnterBack: () => {
-          console.log('onEnterBack')
           splitTween.play()
         },
         onLeave: () => {
-          console.log('onLeave')
           splitTween.pause().progress(0)
         },
         onLeaveBack: () => {
-          console.log('onLeaveBack')
           splitTween.pause().progress(0)
         },
       },
@@ -65,10 +61,10 @@ export default function VideoIntro() {
   }, [])
 
   return (
-    <div ref={sectionRef} className="h-screen flex justify-center mb-[50vh]">
+    <div ref={sectionRef} className="mb-[50vh] flex h-screen justify-center">
       <h1
         ref={headingRef}
-        className="text-4xl font-serif font-medium text-center text-balance leading-normal"
+        className="text-center font-serif text-4xl leading-normal font-medium text-balance"
       >
         The Free Shepherd is an atmospheric adventure where you are a sheepdog in a mystical world,
         searching for your lost sheep.
