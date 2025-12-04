@@ -84,18 +84,18 @@ export default function Header() {
         </div>
 
         <div className="relative z-1 flex items-center justify-between gap-8 font-serif text-[#282B2A]">
-          <Link href="/matte-snap" className="w-[25%] font-semibold">
+          <Link href="/" className="w-[25%] font-semibold">
             The Free Shepherd
           </Link>
           <ul className="flex w-[50%] justify-center gap-4 font-light">
             <li>
-              <Link href="/matte-snap#trailer">Trailer</Link>
+              <Link href="/#trailer">Trailer</Link>
             </li>
             <li>
-              <Link href="/matte-snap#updates">Updates</Link>
+              <Link href="/#updates">Updates</Link>
             </li>
             <li>
-              <Link href="/matte-snap#newsletter">Newsletter</Link>
+              <Link href="/#newsletter">Newsletter</Link>
             </li>
             <li>
               <Link href="/contact">Contact</Link>
