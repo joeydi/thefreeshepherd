@@ -108,7 +108,6 @@ export default function VideoScrollMatteSnap() {
     gsap
       .timeline({
         scrollTrigger: {
-          // markers: true,
           trigger: panel4.current,
           start: 'top bottom',
           end: 'bottom top',
@@ -133,7 +132,6 @@ export default function VideoScrollMatteSnap() {
 
     gsap.timeline({
       scrollTrigger: {
-        markers: true,
         trigger: panel5.current,
         start: 'top top',
         end: 'bottom top',
