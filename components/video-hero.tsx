@@ -30,7 +30,19 @@ export default function VideoHero() {
       const xPercent = gsap.utils.mapRange(0, window.innerWidth, 5, -5, e.clientX)
       const yPercent = gsap.utils.mapRange(0, window.innerHeight, 5, -5, e.clientY)
 
-      gsap.to([bg1Ref.current, bg2Ref.current, videoRef.current], {
+      gsap.to(bg1Ref.current, {
+        xPercent: xPercent * 0.5,
+        yPercent: yPercent * 0.5,
+        duration: 0.5,
+        ease: 'power2.out',
+      })
+      gsap.to(bg2Ref.current, {
+        xPercent: xPercent * 0.75,
+        yPercent: yPercent * 0.75,
+        duration: 0.5,
+        ease: 'power2.out',
+      })
+      gsap.to(videoRef.current, {
         xPercent,
         yPercent,
         duration: 0.5,
