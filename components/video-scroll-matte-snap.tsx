@@ -182,7 +182,7 @@ export default function VideoScrollMatteSnap() {
               Drift through open worlds shaped by mood and mystery.
             </h2>
             <p className="text-fluid-md text-balance text-white">
-              wind in the grass, distant bleats, rain over stone. The terrain, sound, and lighting
+              Wind in the grass, distant bleats, rain over stone. The terrain, sound, and lighting
               wrap you in a quiet spell as you search for your flock.
             </p>
           </BlurUp>
