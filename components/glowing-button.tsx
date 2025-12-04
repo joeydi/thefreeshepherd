@@ -8,21 +8,21 @@ export function GlowingButton({
   return (
     <button
       type="submit"
-      className={cn('relative py-3 px-5 group cursor-pointer', className)}
+      className={cn('group relative cursor-pointer rounded-sm bg-[#666] px-6 py-3', className)}
       {...rest}
     >
-      <span className="flex items-center justify-center gap-4 relative z-2 font-bold font-serif text-white">
+      <span className="relative z-2 flex items-center justify-center gap-4 font-serif font-bold text-white">
         {children}
       </span>
-      <div className="absolute z-1 inset-0 rounded-sm bg-linear-to-b from-white/50 to-white/20 backdrop-blur-md inset-ring-1 inset-ring-white/20" />
+      <div className="absolute inset-0 z-1 rounded-sm bg-linear-to-b from-white/50 to-white/20 inset-ring-1 inset-ring-white/20 backdrop-blur-md" />
       {/* Outer glow layers */}
-      <div className="absolute inset-0 scale-120 rounded-sm bg-[#5dede3]/30 blur-3xl animate-pulse" />
+      <div className="absolute inset-0 scale-y-120 animate-pulse rounded-sm bg-[#5dede3]/40 blur-xl" />
       <div
-        className="absolute inset-0 scale-110 rounded-sm bg-[#5dede3]/20 blur-2xl animate-pulse"
+        className="absolute inset-0 scale-y-110 animate-pulse rounded-sm bg-[#5dede3]/30 blur-xl"
         style={{ animationDelay: '1.33s' }}
       />
       <div
-        className="absolute inset-0 scale-100 rounded-sm bg-[#5dede3]/50 blur-lg animate-pulse group-hover:bg-[#5dede3] transition-colors"
+        className="absolute inset-0 scale-y-100 animate-pulse rounded-sm bg-[#5dede3]/30 blur-xl transition-colors group-hover:bg-[#5dede3]"
         style={{ animationDelay: '2.66s' }}
       />
     </button>
