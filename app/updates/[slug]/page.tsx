@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { formatDate, getBlogPost, getBlogPosts } from '@/utils/blog'
 import { CustomMDX } from '@/components/mdx'
+import Image from 'next/image'
 // import { baseUrl } from 'app/sitemap'
 
 export async function generateStaticParams() {
@@ -29,24 +30,24 @@ export async function generateMetadata({ params }: Props) {
   return {
     title,
     description,
-    // openGraph: {
-    //   title,
-    //   description,
-    //   type: 'article',
-    //   publishedTime,
-    //   url: `${baseUrl}/blog/${post.slug}`,
-    //   images: [
-    //     {
-    //       url: ogImage,
-    //     },
-    //   ],
-    // },
-    // twitter: {
-    //   card: 'summary_large_image',
-    //   title,
-    //   description,
-    //   images: [ogImage],
-    // },
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      publishedTime,
+      url: `/updates/${post.slug}`,
+      images: [
+        {
+          url: thumbnail,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [thumbnail],
+    },
   }
 }
 
@@ -59,8 +60,8 @@ export default async function Blog({ params }: Props) {
   }
 
   return (
-    <main className="bg-[#282B2A] text-white relative z-1 h-screen min-h-fit pt-48 pb-3 px-16">
-      {/* <script
+    <main className="relative z-1 h-screen min-h-fit bg-[#282B2A] px-16 pt-48 pb-3 text-white">
+      <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
@@ -68,29 +69,44 @@ export default async function Blog({ params }: Props) {
             '@context': 'https://schema.org',
             '@type': 'BlogPosting',
             headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
+            datePublished: post.metadata.date,
+            dateModified: post.metadata.date,
+            description: post.metadata.description,
+            image: post.metadata.thumbnail,
+            url: `/updates/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'My Portfolio',
             },
           }),
         }}
-      /> */}
-      <h1 className="title font-semibold text-2xl tracking-tighter">{post.metadata.title}</h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.date)}
-        </p>
+      />
+      <div className="flex flex-col items-center">
+        <div className="mb-8 w-full max-w-5xl">
+          <p className="mb-2 text-[#85998F]">{formatDate(post.metadata.date)}</p>
+          <h1 className="mb-4 font-serif text-2xl font-semibold tracking-tight text-white md:text-3xl lg:text-4xl">
+            {post.metadata.title}
+          </h1>
+          <p className="text-xl text-pretty text-[#BCC8C6]">{post.metadata.description}</p>
+        </div>
+        {post.metadata.thumbnail && (
+          <div className="relative aspect-video w-full max-w-7xl lg:col-span-2">
+            <Image
+              src={post.metadata.thumbnail}
+              alt={post.metadata.title}
+              fill
+              unoptimized
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              className="rounded-fluid-xs object-cover"
+            />
+          </div>
+        )}
+        <div className="mt-16 max-w-5xl">
+          <CustomMDX source={post.content} />
+        </div>
       </div>
-      <article className="prose">
-        <CustomMDX source={post.content} />
-      </article>
     </main>
   )
 }
