@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -15,8 +15,35 @@ export default function VideoHero() {
   const sectionRef = useRef<HTMLImageElement>(null)
   const bg1Ref = useRef<HTMLImageElement>(null)
   const bg2Ref = useRef<HTMLImageElement>(null)
+  const videoRef = useRef<HTMLDivElement>(null)
   const logoRef = useRef<HTMLImageElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!sectionRef.current) return
+
+    const section = sectionRef.current
+
+    gsap.set([bg1Ref.current, bg2Ref.current, videoRef.current], { scale: 1.1 })
+
+    const mousemoveHandler = (e: MouseEvent) => {
+      const xPercent = gsap.utils.mapRange(0, window.innerWidth, 5, -5, e.clientX)
+      const yPercent = gsap.utils.mapRange(0, window.innerHeight, 5, -5, e.clientY)
+
+      gsap.to([bg1Ref.current, bg2Ref.current, videoRef.current], {
+        xPercent,
+        yPercent,
+        duration: 0.5,
+        ease: 'power2.out',
+      })
+    }
+
+    section.addEventListener('mousemove', mousemoveHandler)
+
+    return () => {
+      section.removeEventListener('mousemove', mousemoveHandler)
+    }
+  }, [])
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -75,7 +102,6 @@ export default function VideoHero() {
         ref={sectionRef}
         className="relative flex h-screen items-center justify-center overflow-hidden"
       >
-        <h1 className="text-2xl">The Free Shepard</h1>
         <Image className="object-cover" ref={bg1Ref} src="/hero-bg.jpg" fill unoptimized alt="" />
         <Image className="object-cover" ref={bg2Ref} src="/hero-bg.png" fill unoptimized alt="" />
         <div className="absolute top-[34%] left-[32%] flex w-[36%] flex-col gap-8">
@@ -119,7 +145,9 @@ export default function VideoHero() {
             </BlurUp>
           </div>
         </div>
-        <AlphaVideo src="/hero-clip-1-alpha.mp4" />
+        <div ref={videoRef} className="absolute bottom-0 left-0 aspect-video w-full">
+          <AlphaVideo src="/hero-clip-1-alpha.mp4" />
+        </div>
         <div className="absolute bottom-0 left-0 h-[20vh] w-full bg-linear-to-b from-[#282B2A]/0 to-[#282B2A]"></div>
         <div className="absolute bottom-0 left-0 h-[10vh] w-full bg-linear-to-b from-[#282B2A]/0 to-[#282B2A]"></div>
       </div>
