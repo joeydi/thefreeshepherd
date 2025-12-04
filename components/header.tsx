@@ -47,27 +47,27 @@ export default function Header() {
   }, [generateParticles])
 
   return (
-    <div className="z-10 fixed w-full left-0 top-0 p-8">
-      <div ref={containerRef} className="relative py-4 px-8">
-        <div className="absolute z-1 inset-0 rounded-fluid-xs bg-linear-to-b from-white/50 to-white/20 backdrop-blur-md inset-ring-1 inset-ring-white/20" />
+    <div className="fixed top-0 left-0 z-10 w-full p-8">
+      <div ref={containerRef} className="relative px-8 py-4">
+        <div className="rounded-fluid-xs absolute inset-0 z-1 bg-linear-to-b from-white/50 to-white/20 inset-ring-1 inset-ring-white/20 backdrop-blur-md" />
         {/* Outer glow layers */}
-        <div className="absolute inset-0 scale-120 rounded-fluid-xs bg-[#5dede3]/30 blur-3xl animate-pulse" />
+        <div className="rounded-fluid-xs absolute inset-0 scale-120 animate-pulse bg-[#5dede3]/30 blur-3xl" />
         <div
-          className="absolute inset-0 scale-110 rounded-fluid-xs bg-[#5dede3]/20 blur-2xl animate-pulse"
+          className="rounded-fluid-xs absolute inset-0 scale-110 animate-pulse bg-[#5dede3]/20 blur-2xl"
           style={{ animationDelay: '1.33s' }}
         />
         <div
-          className="absolute inset-0 scale-100 rounded-fluid-xs bg-[#5dede3]/10 blur-lg animate-pulse"
+          className="rounded-fluid-xs absolute inset-0 scale-100 animate-pulse bg-[#5dede3]/10 blur-lg"
           style={{ animationDelay: '2.66s' }}
         />
 
-        <div className="absolute inset-0 overflow-visible pointer-events-none">
+        <div className="pointer-events-none absolute inset-0 overflow-visible">
           {particles.map((particle) => {
             const startXPx = (particle.startXPercent / 100) * containerWidth - containerWidth / 2
             return (
               <div
                 key={particle.id}
-                className="absolute left-1/2 top-1/2 rounded-fluid-xs bg-white"
+                className="rounded-fluid-xs absolute top-1/2 left-1/2 bg-white"
                 style={{
                   width: `${particle.size}px`,
                   height: `${particle.size}px`,
@@ -83,11 +83,11 @@ export default function Header() {
           })}
         </div>
 
-        <div className="relative z-1 flex justify-between gap-8 items-center text-[#282B2A] font-serif">
+        <div className="relative z-1 flex items-center justify-between gap-8 font-serif text-[#282B2A]">
           <Link href="/matte-snap" className="w-[25%] font-semibold">
             The Free Shepherd
           </Link>
-          <ul className="w-[50%] flex justify-center gap-4 font-light">
+          <ul className="flex w-[50%] justify-center gap-4 font-light">
             <li>
               <Link href="/matte-snap#trailer">Trailer</Link>
             </li>
@@ -101,7 +101,7 @@ export default function Header() {
               <Link href="/contact">Contact</Link>
             </li>
           </ul>
-          <ul className="w-[25%] flex justify-end gap-8">
+          <ul className="flex w-[25%] justify-end gap-8">
             <li>
               <a href="">
                 <Image src="/icons/x.svg" width="22" height="20" alt="Frame Interactive on X" />
@@ -146,8 +146,8 @@ export default function Header() {
                 15% {
                   opacity: 1;
                   transform: translate(calc(-50% + ${startXPx}px), -50%) translate(${
-                endX * 0.1
-              }px, ${endY * 0.1}px) scale(1);
+                    endX * 0.1
+                  }px, ${endY * 0.1}px) scale(1);
                 }
                 100% {
                   opacity: 0;
