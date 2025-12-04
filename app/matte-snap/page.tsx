@@ -18,7 +18,7 @@ const cards = [
     description:
       'Meet the loyal sheepdog at the heart of the journey—agile, expressive, and ready to lead you through wild terrain and quiet mysteries.',
     image: '/excerpt-shepherd.jpg',
-    link: '/updates/test',
+    link: '/updates/your-new-best-friend',
   },
   {
     title: 'Dev Log: Winter 2026',

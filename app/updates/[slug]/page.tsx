@@ -60,7 +60,7 @@ export default async function Blog({ params }: Props) {
   }
 
   return (
-    <main className="relative z-1 h-screen min-h-fit bg-[#282B2A] px-16 pt-48 pb-3 text-white">
+    <main className="relative z-1 h-screen min-h-fit bg-[#282B2A] px-16 pt-48 pb-32 text-[#BCC8C6]">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -81,13 +81,13 @@ export default async function Blog({ params }: Props) {
           }),
         }}
       />
-      <div className="flex flex-col items-center">
+      <div className="text-fluid-md flex flex-col items-center">
         <div className="mb-8 w-full max-w-5xl">
           <p className="mb-2 text-[#85998F]">{formatDate(post.metadata.date)}</p>
-          <h1 className="mb-4 font-serif text-2xl font-semibold tracking-tight text-white md:text-3xl lg:text-4xl">
+          <h1 className="text-fluid-2xl mb-4 font-serif font-semibold tracking-tight text-white">
             {post.metadata.title}
           </h1>
-          <p className="text-xl text-pretty text-[#BCC8C6]">{post.metadata.description}</p>
+          <p className="text-fluid-lg text-pretty text-[#BCC8C6]">{post.metadata.description}</p>
         </div>
         {post.metadata.thumbnail && (
           <div className="relative aspect-video w-full max-w-7xl lg:col-span-2">
@@ -103,7 +103,7 @@ export default async function Blog({ params }: Props) {
             />
           </div>
         )}
-        <div className="mt-16 max-w-5xl">
+        <div className="mt-16 w-full max-w-5xl">
           <CustomMDX source={post.content} />
         </div>
       </div>
