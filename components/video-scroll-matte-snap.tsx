@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useRef, useState } from "react"
-import { gsap } from "gsap"
-import { useGSAP } from "@gsap/react"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useRef, useState } from 'react'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -15,7 +15,7 @@ export default function VideoScrollMatteSnap() {
 
   const panel1 = useRef<HTMLDivElement>(null)
   const video1 = useRef<HTMLVideoElement>(null)
-  const heading1 = useRef<HTMLHeadingElement>(null)
+  const heading1 = useRef<HTMLDivElement>(null)
   const panel2 = useRef<HTMLDivElement>(null)
   const video2 = useRef<HTMLVideoElement>(null)
   const heading2 = useRef<HTMLHeadingElement>(null)
@@ -31,15 +31,13 @@ export default function VideoScrollMatteSnap() {
       .timeline({
         scrollTrigger: {
           trigger: panel1.current,
-          start: "top bottom",
-          end: "bottom top",
+          start: 'top bottom',
+          end: 'bottom top',
           scrub: true,
           onEnter: () => {
             setMaskActive1(true)
           },
           onLeaveBack: () => {
-            console.log("onLeaveBack")
-
             setMaskActive1(false)
           },
         },
@@ -48,18 +46,18 @@ export default function VideoScrollMatteSnap() {
         video1.current,
         {
           currentTime: video1?.current?.duration || 3,
-          ease: "none",
+          ease: 'none',
           duration: 1,
         },
-        0
+        0,
       )
 
     gsap
       .timeline({
         scrollTrigger: {
           trigger: panel2.current,
-          start: "top bottom",
-          end: "bottom top",
+          start: 'top bottom',
+          end: 'bottom top',
           scrub: true,
           onEnter: () => {
             setMaskActive2(true)
@@ -73,18 +71,18 @@ export default function VideoScrollMatteSnap() {
         video2.current,
         {
           currentTime: video2?.current?.duration || 3,
-          ease: "none",
+          ease: 'none',
           duration: 1,
         },
-        0
+        0,
       )
 
     gsap
       .timeline({
         scrollTrigger: {
           trigger: panel3.current,
-          start: "top bottom",
-          end: "bottom top",
+          start: 'top bottom',
+          end: 'bottom top',
           scrub: true,
           onEnter: () => {
             setMaskActive3(true)
@@ -98,18 +96,18 @@ export default function VideoScrollMatteSnap() {
         video3.current,
         {
           currentTime: video3?.current?.duration || 3,
-          ease: "none",
+          ease: 'none',
           duration: 1,
         },
-        0
+        0,
       )
 
     gsap
       .timeline({
         scrollTrigger: {
           trigger: panel4.current,
-          start: "top bottom",
-          end: "bottom top",
+          start: 'top bottom',
+          end: 'bottom top',
           scrub: true,
           onEnter: () => {
             setMaskActive4(true)
@@ -123,48 +121,58 @@ export default function VideoScrollMatteSnap() {
         video4.current,
         {
           currentTime: video4?.current?.duration || 3,
-          ease: "none",
+          ease: 'none',
           duration: 1,
         },
-        0
+        0,
       )
   }, [])
 
   return (
     <div className="relative">
       <div ref={panel1} className="h-screen p-16">
-        <h2 ref={heading1} className="relative z-1 max-w-3xl text-balance font-semibold text-2xl text-white">
-          A sweeping adventure painted with soft light, shifting weather, and cinematic motion. Every run, leap, and
-          tail-wag flows through handcrafted landscapes that feel alive from the first step.
-        </h2>
+        <div ref={heading1} className="relative z-1 flex max-w-2xl flex-col gap-4">
+          <h2 className="text-fluid-xl leading-tight font-semibold text-balance text-white">
+            A sweeping adventure painted with soft light, shifting weather, and cinematic motion.
+          </h2>
+          <p className="text-fluid-md text-balance text-white">
+            Every run, leap, and tail-wag flows through handcrafted landscapes that feel alive from
+            the first step.
+          </p>
+        </div>
         <video
           style={{
-            maskImage: "url(/ink-matte-flat-bottom.jpg)",
-            maskMode: "luminance",
-            maskSize: "100% 3200%",
-            maskPosition: "50% 0%",
+            maskImage: 'url(/ink-matte-flat-bottom.jpg)',
+            maskMode: 'luminance',
+            maskSize: '100% 3200%',
+            maskPosition: '50% 0%',
           }}
-          className={`fixed inset-0 block w-full h-screen object-cover ${
-            maskActive1 === null ? "mask-initial" : maskActive1 ? "mask-reveal" : "mask-hide"
+          className={`fixed inset-0 block h-screen w-full object-cover ${
+            maskActive1 === null ? 'mask-initial' : maskActive1 ? 'mask-reveal' : 'mask-hide'
           }`}
           ref={video1}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene1.mp4"
           muted
         ></video>
       </div>
-      <div ref={panel2} className="h-screen flex p-16">
-        <h2 ref={heading2} className="relative z-1 max-w-3xl text-balance font-semibold text-2xl text-white ml-auto">
-          Drift through open worlds shaped by mood and mystery—wind in the grass, distant bleats, rain over stone. The
-          terrain, sound, and lighting wrap you in a quiet spell as you search for your flock.
-        </h2>
+      <div ref={panel2} className="flex h-screen p-16">
+        <div ref={heading2} className="relative z-1 flex max-w-2xl flex-col gap-4">
+          <h2 className="text-fluid-xl leading-tight font-semibold text-balance text-white">
+            Drift through open worlds shaped by mood and mystery.
+          </h2>
+          <p className="text-fluid-md text-balance text-white">
+            wind in the grass, distant bleats, rain over stone. The terrain, sound, and lighting
+            wrap you in a quiet spell as you search for your flock.
+          </p>
+        </div>
         <video
           style={{
-            maskImage: "url(/ink-matte-flat-bottom.jpg)",
-            maskMode: "luminance",
-            maskSize: "100% 3200%",
+            maskImage: 'url(/ink-matte-flat-bottom.jpg)',
+            maskMode: 'luminance',
+            maskSize: '100% 3200%',
           }}
-          className={`fixed inset-0 block w-full h-screen object-cover ${
-            maskActive2 === null ? "mask-initial" : maskActive2 ? "mask-reveal" : "mask-hide"
+          className={`fixed inset-0 block h-screen w-full object-cover ${
+            maskActive2 === null ? 'mask-initial' : maskActive2 ? 'mask-reveal' : 'mask-hide'
           }`}
           ref={video2}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene2.mp4"
@@ -172,18 +180,23 @@ export default function VideoScrollMatteSnap() {
         ></video>
       </div>
       <div ref={panel3} className="h-screen p-16">
-        <h2 ref={heading3} className="relative z-1 max-w-3xl text-balance font-semibold text-2xl text-white">
-          Control a fully physical, expressive sheepdog built for momentum. Sprint, skid, swim, dig, bark, and bound
-          across obstacles as you herd massive flocks and follow the trail toward the sheep you’ve sworn to protect.
-        </h2>
+        <div ref={heading3} className="relative z-1 flex max-w-2xl flex-col gap-4">
+          <h2 className="text-fluid-xl leading-tight font-semibold text-balance text-white">
+            Control a fully physical, expressive sheepdog built for momentum.
+          </h2>
+          <p className="text-fluid-md text-balance text-white">
+            Sprint, skid, swim, dig, bark, and bound across obstacles as you herd massive flocks and
+            follow the trail toward the sheep you’ve sworn to protect.
+          </p>
+        </div>
         <video
           style={{
-            maskImage: "url(/ink-matte-flat-bottom.jpg)",
-            maskMode: "luminance",
-            maskSize: "100% 3200%",
+            maskImage: 'url(/ink-matte-flat-bottom.jpg)',
+            maskMode: 'luminance',
+            maskSize: '100% 3200%',
           }}
-          className={`fixed inset-0 block w-full h-screen object-cover ${
-            maskActive3 === null ? "mask-initial" : maskActive3 ? "mask-reveal" : "mask-hide"
+          className={`fixed inset-0 block h-screen w-full object-cover ${
+            maskActive3 === null ? 'mask-initial' : maskActive3 ? 'mask-reveal' : 'mask-hide'
           }`}
           ref={video3}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene3.mp4"
@@ -191,18 +204,23 @@ export default function VideoScrollMatteSnap() {
         ></video>
       </div>
       <div ref={panel4} className="h-screen p-16">
-        <h2 ref={heading4} className="relative z-1 max-w-3xl text-balance font-semibold text-2xl text-white ml-auto">
-          Beneath the pastoral calm lies something uncanny. Subtle fantastical forces reshape the world, turning
-          puzzles, environments, and even the flock itself into surprises that deepen the journey.
-        </h2>
+        <div ref={heading4} className="relative z-1 flex max-w-2xl flex-col gap-4">
+          <h2 className="text-fluid-xl leading-tight font-semibold text-balance text-white">
+            Beneath the pastoral calm lies something uncanny.
+          </h2>
+          <p className="text-fluid-md text-balance text-white">
+            Subtle fantastical forces reshape the world, turning puzzles, environments, and even the
+            flock itself into surprises that deepen the journey.
+          </p>
+        </div>
         <video
           style={{
-            maskImage: "url(/ink-matte-flat-bottom.jpg)",
-            maskMode: "luminance",
-            maskSize: "100% 3200%",
+            maskImage: 'url(/ink-matte-flat-bottom.jpg)',
+            maskMode: 'luminance',
+            maskSize: '100% 3200%',
           }}
-          className={`fixed inset-0 block w-full h-screen object-cover ${
-            maskActive4 === null ? "mask-initial" : maskActive4 ? "mask-reveal" : "mask-hide"
+          className={`fixed inset-0 block h-screen w-full object-cover ${
+            maskActive4 === null ? 'mask-initial' : maskActive4 ? 'mask-reveal' : 'mask-hide'
           }`}
           ref={video4}
           src="https://thefreeshepard.s3.amazonaws.com/static/video/scene4.mp4"
