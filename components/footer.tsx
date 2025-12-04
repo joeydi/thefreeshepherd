@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#282B2A] relative z-2 py-8 px-16 flex flex-col gap-8 md:flex-row justify-between text-[#B5C0C4] font-medium">
+    <footer className="relative z-2 flex flex-col justify-between gap-8 bg-[#282B2A] px-16 py-8 font-medium text-[#BCC8C6] md:flex-row">
       <span className="lg:w-[35%]">
         &copy; {new Date().getFullYear()}{' '}
         <a href="https://frameinteractive.com/" target="_blank">
