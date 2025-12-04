@@ -3,10 +3,10 @@ import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import React, { ComponentProps } from 'react'
 
-function CustomLink(props) {
+function CustomLink(props: ComponentProps<'a'>) {
   const href = props.href
 
-  if (href.startsWith('/')) {
+  if (href && href.startsWith('/')) {
     return (
       <Link href={href} {...props}>
         {props.children}
@@ -14,20 +14,19 @@ function CustomLink(props) {
     )
   }
 
-  if (href.startsWith('#')) {
+  if (href && href.startsWith('#')) {
     return <a {...props} />
   }
 
   return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />
+function RoundedImage({ alt, ...props }: ComponentProps<typeof Image>) {
+  return <Image alt={alt || ''} {...props} className="rounded-lg" />
 }
 
-function slugify(str) {
-  return str
-    .toString()
+function slugify(str: string | React.ReactNode): string {
+  return String(str)
     .toLowerCase()
     .trim() // Remove whitespace from both ends of a string
     .replace(/\s+/g, '-') // Replace spaces with -
@@ -36,8 +35,8 @@ function slugify(str) {
     .replace(/\-\-+/g, '-') // Replace multiple - with single -
 }
 
-function createHeading(level) {
-  const Heading = ({ children }) => {
+function createHeading(level: number) {
+  const Heading = ({ children }: { children: React.ReactNode }) => {
     const slug = slugify(children)
     return React.createElement(
       `h${level}`,
