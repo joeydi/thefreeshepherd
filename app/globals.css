@@ -2,7 +2,25 @@
 
 @theme {
   --font-sans: var(--font-roboto);
+  --font-mono: var(--font-roboto-mono);
   --font-serif: var(--font-inknut);
+
+  /* Fluid type scale */
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1440,18,1.333,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  /* Step -1: 13.3333px → 13.5034px */
+  --text-fluid-sm: clamp(0.8333rem, 0.8303rem + 0.0152vw, 0.844rem);
+  /* Step 0: 16px → 18px */
+  --text-fluid-md: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+  /* Step 1: 19.2px → 23.994px */
+  --text-fluid-lg: clamp(1.2rem, 1.1144rem + 0.428vw, 1.4996rem);
+  /* Step 2: 23.04px → 31.984px */
+  --text-fluid-xl: clamp(1.44rem, 1.2803rem + 0.7986vw, 1.999rem);
+  /* Step 3: 27.648px → 42.6347px */
+  --text-fluid-2xl: clamp(1.728rem, 1.4604rem + 1.3381vw, 2.6647rem);
+  /* Step 4: 33.1776px → 56.832px */
+  --text-fluid-3xl: clamp(2.0736rem, 1.6512rem + 2.112vw, 3.552rem);
+  /* Step 5: 39.8131px → 75.7571px */
+  --text-fluid-4xl: clamp(2.4883rem, 1.8465rem + 3.2093vw, 4.7348rem);
 
   --animate-pulse: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
