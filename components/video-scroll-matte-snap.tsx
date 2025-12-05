@@ -149,9 +149,9 @@ export default function VideoScrollMatteSnap() {
   return (
     <div className="relative">
       <div ref={panel1} className="h-screen p-16">
-        <div ref={heading1} className="relative z-1 flex max-w-2xl">
-          <BlurUp className="flex-col gap-4">
-            <h2 className="text-fluid-xl leading-tight font-semibold text-balance text-white">
+        <div ref={heading1} className="relative z-1 max-w-4xl">
+          <BlurUp className="flex flex-col gap-4">
+            <h2 className="text-fluid-xl font-serif leading-tight font-semibold text-balance text-white">
               A sweeping adventure painted with soft light, shifting weather, and cinematic motion.
             </h2>
             <p className="text-fluid-md text-balance text-white">
@@ -176,9 +176,9 @@ export default function VideoScrollMatteSnap() {
         ></video>
       </div>
       <div ref={panel2} className="flex h-screen p-16">
-        <div ref={heading2} className="relative z-1 ml-auto flex max-w-2xl">
-          <BlurUp className="flex-col gap-4">
-            <h2 className="text-fluid-xl leading-tight font-semibold text-balance text-white">
+        <div ref={heading2} className="relative z-1 ml-auto max-w-2xl">
+          <BlurUp className="flex flex-col gap-4">
+            <h2 className="text-fluid-xl font-serif leading-tight font-semibold text-balance text-white">
               Drift through open worlds shaped by mood and mystery.
             </h2>
             <p className="text-fluid-md text-balance text-white">
@@ -202,9 +202,9 @@ export default function VideoScrollMatteSnap() {
         ></video>
       </div>
       <div ref={panel3} className="h-screen p-16">
-        <div ref={heading3} className="relative z-1 flex max-w-2xl">
-          <BlurUp className="flex-col gap-4">
-            <h2 className="text-fluid-xl leading-tight font-semibold text-balance text-white">
+        <div ref={heading3} className="relative z-1 max-w-3xl">
+          <BlurUp className="flex flex-col gap-4">
+            <h2 className="text-fluid-xl font-serif leading-tight font-semibold text-balance text-white">
               Control a fully physical, expressive sheepdog built for momentum.
             </h2>
             <p className="text-fluid-md text-balance text-white">
@@ -228,9 +228,9 @@ export default function VideoScrollMatteSnap() {
         ></video>
       </div>
       <div ref={panel4} className="h-screen p-16">
-        <div ref={heading4} className="relative z-1 ml-auto flex max-w-2xl">
-          <BlurUp className="flex-col gap-4">
-            <h2 className="text-fluid-xl leading-tight font-semibold text-balance text-white">
+        <div ref={heading4} className="relative z-1 ml-auto max-w-2xl">
+          <BlurUp className="flex flex-col gap-4">
+            <h2 className="text-fluid-xl font-serif leading-tight font-semibold text-balance text-white">
               Beneath the pastoral calm lies something uncanny.
             </h2>
             <p className="text-fluid-md text-balance text-white">
