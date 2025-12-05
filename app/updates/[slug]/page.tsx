@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { formatDate, getBlogPost, getBlogPosts } from '@/utils/blog'
 import { CustomMDX } from '@/components/mdx'
 import Image from 'next/image'
+import { BlurUp } from '@/components/blur-up'
 // import { baseUrl } from 'app/sitemap'
 
 export async function generateStaticParams() {
@@ -90,7 +91,7 @@ export default async function Blog({ params }: Props) {
           <p className="text-fluid-lg text-pretty text-[#BCC8C6]">{post.metadata.description}</p>
         </div>
         {post.metadata.thumbnail && (
-          <div className="relative aspect-video w-full max-w-7xl lg:col-span-2">
+          <BlurUp className="relative aspect-video w-full max-w-7xl lg:col-span-2">
             <Image
               src={post.metadata.thumbnail}
               alt={post.metadata.title}
@@ -101,7 +102,7 @@ export default async function Blog({ params }: Props) {
               fetchPriority="high"
               className="rounded-fluid-xs object-cover"
             />
-          </div>
+          </BlurUp>
         )}
         <div className="mt-16 w-full max-w-5xl">
           <CustomMDX source={post.content} />
