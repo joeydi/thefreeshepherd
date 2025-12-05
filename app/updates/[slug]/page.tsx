@@ -82,13 +82,13 @@ export default async function Blog({ params }: Props) {
           }),
         }}
       />
-      <div className="text-fluid-md flex flex-col items-center">
+      <div className="text-md flex flex-col items-center">
         <div className="mb-8 w-full max-w-5xl">
           <p className="mb-2 text-[#85998F]">{formatDate(post.metadata.date)}</p>
-          <h1 className="text-fluid-2xl mb-4 font-serif font-semibold tracking-tight text-white">
+          <h1 className="mb-4 font-serif text-2xl font-semibold tracking-tight text-white">
             {post.metadata.title}
           </h1>
-          <p className="text-fluid-lg text-pretty text-[#BCC8C6]">{post.metadata.description}</p>
+          <p className="text-lg text-balance text-[#BCC8C6]">{post.metadata.description}</p>
         </div>
         {post.metadata.thumbnail && (
           <BlurUp className="relative aspect-video w-full max-w-7xl lg:col-span-2">

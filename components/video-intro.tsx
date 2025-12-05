@@ -64,7 +64,7 @@ export default function VideoIntro() {
     <div ref={sectionRef} className="mb-[75vh] flex h-screen justify-center">
       <h1
         ref={headingRef}
-        className="text-center font-serif text-4xl leading-normal font-medium text-balance"
+        className="text-center font-serif text-2xl leading-normal font-medium text-balance"
       >
         The Free Shepherd is an atmospheric adventure where you are a sheepdog in a mystical world,
         searching for your lost sheep.

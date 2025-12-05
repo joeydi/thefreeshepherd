@@ -52,7 +52,7 @@ export default async function Matte() {
         </div>
         <div id="updates" className="flex items-center justify-center">
           <BlurUp className="flex flex-col items-center gap-8">
-            <h2 className="font-serif text-2xl">Latest updates</h2>
+            <h2 className="font-serif text-xl">Latest updates</h2>
             <FeatureCards cards={cards} />
           </BlurUp>
         </div>

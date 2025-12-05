@@ -131,8 +131,8 @@ export default function VideoHero() {
           </div>
           <div ref={ctaRef} className="z-1">
             <BlurUp className="rounded-fluid-xs flex items-center gap-4 bg-black/10 p-4 pl-8 inset-ring-1 inset-ring-white/10 backdrop-blur-md">
-              <span className="mr-auto text-lg font-semibold text-white">Coming Spring 2027</span>
-              <GlowingButton className="min-w-52">
+              <span className="mr-auto font-semibold text-white">Coming Spring 2027</span>
+              <GlowingButton className="min-w-48">
                 <Image
                   className="size-8"
                   src="/icons/playstation.svg"
@@ -141,9 +141,9 @@ export default function VideoHero() {
                   unoptimized
                   alt=""
                 />
-                <span className="text-lg font-semibold">PlayStation</span>
+                <span className="font-semibold">PlayStation</span>
               </GlowingButton>
-              <GlowingButton className="min-w-52">
+              <GlowingButton className="min-w-48">
                 <Image
                   className="size-8"
                   src="/icons/steam.svg"
@@ -152,7 +152,7 @@ export default function VideoHero() {
                   unoptimized
                   alt=""
                 />
-                <span className="text-lg font-semibold">Steam</span>
+                <span className="font-semibold">Steam</span>
               </GlowingButton>
             </BlurUp>
           </div>

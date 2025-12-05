@@ -28,7 +28,7 @@ export function FeatureCards({ cards }: FeatureCardsProps) {
             <div className="rounded-fluid-xs absolute inset-0 inset-ring-1 inset-ring-white/10"></div>
           </div>
           <div className="p-4">
-            <h3 className="mb-2 font-serif text-xl font-semibold text-pretty transition-colors group-hover:text-[#BDEFDA]">
+            <h3 className="mb-2 font-serif text-lg font-semibold text-pretty transition-colors group-hover:text-[#BDEFDA]">
               {card.title}
             </h3>
             <p className="text-pretty text-[#BCC8C6]">{card.description}</p>

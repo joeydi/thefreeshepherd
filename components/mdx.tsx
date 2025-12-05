@@ -39,34 +39,34 @@ function Anchor({ href, className, children, ...rest }: ComponentProps<'a'>) {
 function Blockquote(props: ComponentProps<'blockquote'>) {
   return (
     <blockquote
-      className="text-fluid-lg *:text-fluid-lg my-8 border-l-4 border-l-[#54605B] pl-4 text-white first:mt-0"
+      className="my-8 border-l-4 border-l-[#54605B] pl-4 text-lg text-white *:text-lg first:mt-0"
       {...props}
     />
   )
 }
 
 function Heading1(props: ComponentProps<'h1'>) {
-  return <h1 className="text-fluid-2xl mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
+  return <h1 className="mt-8 mb-4 font-serif text-2xl text-white first:mt-0" {...props} />
 }
 
 function Heading2(props: ComponentProps<'h2'>) {
-  return <h2 className="text-fluid-xl mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
+  return <h2 className="mt-8 mb-4 font-serif text-xl text-white first:mt-0" {...props} />
 }
 
 function Heading3(props: ComponentProps<'h3'>) {
-  return <h3 className="text-fluid-lg mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
+  return <h3 className="mt-8 mb-4 font-serif text-lg text-white first:mt-0" {...props} />
 }
 
 function Heading4(props: ComponentProps<'h4'>) {
-  return <h4 className="text-fluid-md mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
+  return <h4 className="text-md mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
 }
 
 function Heading5(props: ComponentProps<'h5'>) {
-  return <h5 className="text-fluid-md mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
+  return <h5 className="text-md mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
 }
 
 function Heading6(props: ComponentProps<'h6'>) {
-  return <h6 className="text-fluid-md mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
+  return <h6 className="text-md mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
 }
 
 function HorizontalRule(props: ComponentProps<'hr'>) {
@@ -86,11 +86,11 @@ function OrderedList(props: ComponentProps<'ol'>) {
 }
 
 function Paragraph(props: ComponentProps<'p'>) {
-  return <p className="text-fluid-md mb-4" {...props} />
+  return <p className="text-md mb-4" {...props} />
 }
 
 function Preformatted(props: ComponentProps<'pre'>) {
-  return <pre className="mb-4 font-serif text-base first:mt-0" {...props} />
+  return <pre className="mb-4 font-serif text-sm first:mt-0" {...props} />
 }
 
 function UnorderedList(props: ComponentProps<'ul'>) {

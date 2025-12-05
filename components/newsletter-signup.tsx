@@ -18,7 +18,7 @@ export default function NewsletterSignup() {
       />
       <div className="rounded-fluid-xs absolute inset-0 hidden bg-[linear-gradient(to_right,#191C17cc,transparent_75%),linear-gradient(to_right,#191C17cc_25%,transparent_65%)] inset-ring inset-ring-white/10 md:block"></div>
       <div className="relative flex max-w-xl flex-col gap-4">
-        <h2 className="font-serif text-2xl font-semibold tracking-tight text-white md:text-3xl md:text-balance lg:text-4xl">
+        <h2 className="font-serif text-xl font-semibold tracking-tight text-white md:text-balance">
           Sign up for updates on our evolving world
         </h2>
         <p className="text-[#BCC8C6] md:text-balance">

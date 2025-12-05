@@ -151,10 +151,10 @@ export default function VideoScrollMatteSnap() {
       <div ref={panel1} className="h-screen p-16">
         <div ref={heading1} className="relative z-1 max-w-4xl">
           <BlurUp className="flex flex-col gap-4">
-            <h2 className="text-fluid-xl font-serif leading-tight font-semibold text-balance text-white">
+            <h2 className="font-serif text-xl leading-tight font-semibold text-balance text-white">
               A sweeping adventure painted with soft light, shifting weather, and cinematic motion.
             </h2>
-            <p className="text-fluid-md text-balance text-white">
+            <p className="text-md text-balance text-white">
               Every run, leap, and tail-wag flows through handcrafted landscapes that feel alive
               from the first step.
             </p>
@@ -176,12 +176,12 @@ export default function VideoScrollMatteSnap() {
         ></video>
       </div>
       <div ref={panel2} className="flex h-screen p-16">
-        <div ref={heading2} className="relative z-1 ml-auto max-w-2xl">
+        <div ref={heading2} className="relative z-1 ml-auto max-w-xl">
           <BlurUp className="flex flex-col gap-4">
-            <h2 className="text-fluid-xl font-serif leading-tight font-semibold text-balance text-white">
+            <h2 className="font-serif text-xl leading-tight font-semibold text-balance text-white">
               Drift through open worlds shaped by mood and mystery.
             </h2>
-            <p className="text-fluid-md text-balance text-white">
+            <p className="text-md text-balance text-white">
               Wind in the grass, distant bleats, rain over stone. The terrain, sound, and lighting
               wrap you in a quiet spell as you search for your flock.
             </p>
@@ -204,10 +204,10 @@ export default function VideoScrollMatteSnap() {
       <div ref={panel3} className="h-screen p-16">
         <div ref={heading3} className="relative z-1 max-w-3xl">
           <BlurUp className="flex flex-col gap-4">
-            <h2 className="text-fluid-xl font-serif leading-tight font-semibold text-balance text-white">
+            <h2 className="font-serif text-xl leading-tight font-semibold text-balance text-white">
               Control a fully physical, expressive sheepdog built for momentum.
             </h2>
-            <p className="text-fluid-md text-balance text-white">
+            <p className="text-md text-balance text-white">
               Sprint, skid, swim, dig, bark, and bound across obstacles as you herd massive flocks
               and follow the trail toward the sheep you’ve sworn to protect.
             </p>
@@ -228,12 +228,12 @@ export default function VideoScrollMatteSnap() {
         ></video>
       </div>
       <div ref={panel4} className="h-screen p-16">
-        <div ref={heading4} className="relative z-1 ml-auto max-w-2xl">
+        <div ref={heading4} className="relative z-1 ml-auto max-w-xl">
           <BlurUp className="flex flex-col gap-4">
-            <h2 className="text-fluid-xl font-serif leading-tight font-semibold text-balance text-white">
+            <h2 className="font-serif text-xl leading-tight font-semibold text-balance text-white">
               Beneath the pastoral calm lies something uncanny.
             </h2>
-            <p className="text-fluid-md text-balance text-white">
+            <p className="text-md text-balance text-white">
               Subtle fantastical forces reshape the world, turning puzzles, environments, and even
               the flock itself into surprises that deepen the journey.
             </p>
