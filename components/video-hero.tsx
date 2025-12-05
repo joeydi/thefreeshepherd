@@ -70,7 +70,7 @@ export default function VideoHero() {
     tl.to(
       bg1Ref.current,
       {
-        yPercent: 50,
+        yPercent: 80,
         ease: 'none',
         duration: 1,
       },
@@ -80,7 +80,7 @@ export default function VideoHero() {
     tl.to(
       bg2Ref.current,
       {
-        yPercent: 25,
+        yPercent: 40,
         ease: 'none',
         duration: 1,
       },
