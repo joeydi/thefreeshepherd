@@ -4,6 +4,7 @@ import { BlurUp } from '@/components/blur-up'
 import { FeatureCards } from '@/components/feature-cards'
 import VideoIntro from '@/components/video-intro'
 import NewsletterSignup from '@/components/newsletter-signup'
+import Main from '@/components/main'
 
 const cards = [
   {
@@ -31,7 +32,7 @@ const cards = [
 
 export default async function Matte() {
   return (
-    <main className="bg-[#282B2A] text-white">
+    <Main>
       <VideoHero />
       <VideoIntro />
       <VideoScrollMatteSnap />
@@ -61,6 +62,6 @@ export default async function Matte() {
           <NewsletterSignup />
         </BlurUp>
       </div>
-    </main>
+    </Main>
   )
 }

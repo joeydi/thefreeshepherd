@@ -2,7 +2,7 @@ import Container from './container'
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="relative z-2">
       <Container className="gap-2xs py-md flex flex-col items-center justify-between font-medium text-[#BCC8C6] md:flex-row">
         <span className="lg:w-[35%]">
           <a href="https://frameinteractive.com/" target="_blank">

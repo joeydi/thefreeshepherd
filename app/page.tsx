@@ -5,6 +5,7 @@ import { FeatureCards } from '@/components/feature-cards'
 import VideoIntro from '@/components/video-intro'
 import NewsletterSignup from '@/components/newsletter-signup'
 import Container from '@/components/container'
+import Main from '@/components/main'
 
 const cards = [
   {
@@ -30,13 +31,13 @@ const cards = [
   },
 ]
 
-export default async function Matte() {
+export default async function Home() {
   return (
-    <main className="bg-[#282B2A] text-white">
+    <Main className="pt-0">
       <VideoHero />
       <VideoIntro />
       <VideoScrollMatteSnap />
-      <Container className="pb-xl gap-xl relative z-2 flex flex-col">
+      <Container className="gap-xl relative z-2 flex flex-col">
         <div id="trailer" className="flex items-center justify-center">
           <BlurUp className="w-full max-w-7xl">
             <iframe
@@ -61,6 +62,6 @@ export default async function Matte() {
           <NewsletterSignup />
         </BlurUp>
       </Container>
-    </main>
+    </Main>
   )
 }

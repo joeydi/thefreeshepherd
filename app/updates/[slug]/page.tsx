@@ -4,6 +4,7 @@ import { CustomMDX } from '@/components/mdx'
 import Image from 'next/image'
 import { BlurUp } from '@/components/blur-up'
 import Container from '@/components/container'
+import Main from '@/components/main'
 // import { baseUrl } from 'app/sitemap'
 
 export async function generateStaticParams() {
@@ -62,7 +63,7 @@ export default async function Blog({ params }: Props) {
   }
 
   return (
-    <main className="py-xl h-screen min-h-fit">
+    <Main>
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -109,6 +110,6 @@ export default async function Blog({ params }: Props) {
           <CustomMDX source={post.content} />
         </div>
       </Container>
-    </main>
+    </Main>
   )
 }
