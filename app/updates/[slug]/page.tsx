@@ -3,6 +3,7 @@ import { formatDate, getBlogPost, getBlogPosts } from '@/utils/blog'
 import { CustomMDX } from '@/components/mdx'
 import Image from 'next/image'
 import { BlurUp } from '@/components/blur-up'
+import Container from '@/components/container'
 // import { baseUrl } from 'app/sitemap'
 
 export async function generateStaticParams() {
@@ -61,7 +62,7 @@ export default async function Blog({ params }: Props) {
   }
 
   return (
-    <main className="relative z-1 h-screen min-h-fit bg-[#282B2A] px-16 pt-48 pb-32 text-[#BCC8C6]">
+    <main className="py-xl h-screen min-h-fit">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -82,13 +83,13 @@ export default async function Blog({ params }: Props) {
           }),
         }}
       />
-      <div className="text-md flex flex-col items-center">
-        <div className="mb-8 w-full max-w-5xl">
+      <Container className="flex flex-col items-center text-[#BCC8C6]">
+        <div className="mb-8 w-full max-w-6xl">
           <p className="mb-2 text-[#85998F]">{formatDate(post.metadata.date)}</p>
           <h1 className="mb-4 font-serif text-2xl font-semibold tracking-tight text-white">
             {post.metadata.title}
           </h1>
-          <p className="text-lg text-balance text-[#BCC8C6]">{post.metadata.description}</p>
+          <p className="text-lg text-balance">{post.metadata.description}</p>
         </div>
         {post.metadata.thumbnail && (
           <BlurUp className="relative aspect-video w-full max-w-7xl lg:col-span-2">
@@ -104,10 +105,10 @@ export default async function Blog({ params }: Props) {
             />
           </BlurUp>
         )}
-        <div className="mt-16 w-full max-w-5xl">
+        <div className="mt-16 w-full max-w-6xl">
           <CustomMDX source={post.content} />
         </div>
-      </div>
+      </Container>
     </main>
   )
 }

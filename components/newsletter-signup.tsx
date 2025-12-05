@@ -9,22 +9,24 @@ export default function NewsletterSignup() {
   const emailInput = useRef<HTMLInputElement>(null)
 
   return (
-    <div className="rounded-fluid-xs relative mx-auto w-full max-w-6xl overflow-hidden bg-white/5 bg-linear-180 p-8 pt-[30vw] shadow-lg inset-ring-1 inset-ring-white/10 md:p-12 lg:p-16 xl:p-20">
+    <div className="rounded-fluid-xs relative mx-auto w-full max-w-7xl overflow-hidden bg-white/5 bg-linear-180 shadow-lg inset-ring-1 inset-ring-white/10">
       <Image
-        className="absolute top-0 right-0 object-cover md:h-full md:w-full"
+        className="top-0 right-0 object-cover md:absolute md:h-full md:w-full"
         src={backgroundImage}
         unoptimized
         alt=""
       />
       <div className="rounded-fluid-xs absolute inset-0 hidden bg-[linear-gradient(to_right,#191C17cc,transparent_75%),linear-gradient(to_right,#191C17cc_25%,transparent_65%)] inset-ring inset-ring-white/10 md:block"></div>
-      <div className="relative flex max-w-xl flex-col gap-4">
-        <h2 className="font-serif text-xl font-semibold tracking-tight text-white md:text-balance">
-          Sign up for updates on our evolving world
-        </h2>
-        <p className="text-[#BCC8C6] md:text-balance">
-          Exclusive interviews, behind-the-scenes insights, and early glimpses into the story and
-          its faithful sheepdog guide.
-        </p>
+      <div className="p-md relative flex flex-col gap-8">
+        <div className="flex flex-col gap-4 md:w-[50%]">
+          <h2 className="font-serif text-xl font-semibold tracking-tight text-balance text-white md:text-balance">
+            Sign up for updates on our evolving world
+          </h2>
+          <p className="text-[#BCC8C6] md:text-balance">
+            Exclusive interviews, behind-the-scenes insights, and early glimpses into the story and
+            its faithful sheepdog guide.
+          </p>
+        </div>
         <form
           onSubmit={() => {
             setTimeout(() => {
@@ -37,7 +39,7 @@ export default function NewsletterSignup() {
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
-          className="mt-4 flex flex-col gap-4 md:flex-row md:items-end"
+          className="flex flex-col gap-4 md:flex-row md:items-end"
           target="_blank"
         >
           <div className="min-w-[280px]">

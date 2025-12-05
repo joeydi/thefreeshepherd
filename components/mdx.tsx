@@ -58,15 +58,15 @@ function Heading3(props: ComponentProps<'h3'>) {
 }
 
 function Heading4(props: ComponentProps<'h4'>) {
-  return <h4 className="text-md mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
+  return <h4 className="mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
 }
 
 function Heading5(props: ComponentProps<'h5'>) {
-  return <h5 className="text-md mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
+  return <h5 className="mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
 }
 
 function Heading6(props: ComponentProps<'h6'>) {
-  return <h6 className="text-md mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
+  return <h6 className="mt-8 mb-4 font-serif text-white first:mt-0" {...props} />
 }
 
 function HorizontalRule(props: ComponentProps<'hr'>) {
@@ -86,11 +86,11 @@ function OrderedList(props: ComponentProps<'ol'>) {
 }
 
 function Paragraph(props: ComponentProps<'p'>) {
-  return <p className="text-md mb-4" {...props} />
+  return <p className="mb-4" {...props} />
 }
 
 function Preformatted(props: ComponentProps<'pre'>) {
-  return <pre className="mb-4 font-serif text-sm first:mt-0" {...props} />
+  return <pre className="mb-4 overflow-auto font-serif text-sm first:mt-0" {...props} />
 }
 
 function UnorderedList(props: ComponentProps<'ul'>) {

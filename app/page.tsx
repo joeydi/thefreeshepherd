@@ -4,6 +4,7 @@ import { BlurUp } from '@/components/blur-up'
 import { FeatureCards } from '@/components/feature-cards'
 import VideoIntro from '@/components/video-intro'
 import NewsletterSignup from '@/components/newsletter-signup'
+import Container from '@/components/container'
 
 const cards = [
   {
@@ -35,9 +36,9 @@ export default async function Matte() {
       <VideoHero />
       <VideoIntro />
       <VideoScrollMatteSnap />
-      <div className="relative z-2 flex flex-col gap-48 px-16 py-48">
+      <Container className="pb-xl gap-xl relative z-2 flex flex-col">
         <div id="trailer" className="flex items-center justify-center">
-          <BlurUp className="w-[80%] max-w-7xl">
+          <BlurUp className="w-full max-w-7xl">
             <iframe
               className="rounded-fluid-xs aspect-video h-auto w-full shadow-lg"
               width="560"
@@ -59,7 +60,7 @@ export default async function Matte() {
         <BlurUp id="newsletter">
           <NewsletterSignup />
         </BlurUp>
-      </div>
+      </Container>
     </main>
   )
 }

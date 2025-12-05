@@ -47,8 +47,8 @@ export default function Header() {
   }, [generateParticles])
 
   return (
-    <div className="fixed top-0 left-0 z-10 w-full p-8">
-      <div ref={containerRef} className="relative px-8 py-4">
+    <div className="p-2xs fixed top-0 left-0 z-10 w-full">
+      <div ref={containerRef} className="px-xs relative py-4">
         <div className="rounded-fluid-xs absolute inset-0 z-1 bg-linear-to-b from-white/50 to-white/20 inset-ring-1 inset-ring-white/20 backdrop-blur-md" />
         {/* Outer glow layers */}
         <div className="rounded-fluid-xs absolute inset-0 scale-120 animate-pulse bg-[#5dede3]/30 blur-3xl" />
