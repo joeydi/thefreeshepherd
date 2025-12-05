@@ -34,9 +34,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${roboto.variable} ${roboto_mono.variable} ${inknut_antiqua.variable} scroll-pt-36`}
+      className={`${roboto.variable} ${roboto_mono.variable} ${inknut_antiqua.variable} scroll-pt-xl`}
     >
-      <body className="scroll-pt-32 bg-[#282B2A]">
+      <body className="bg-[#282B2A] text-white">
         <Header />
         {children}
         <Footer />
