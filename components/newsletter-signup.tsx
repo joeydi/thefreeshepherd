@@ -68,6 +68,7 @@ export default function NewsletterSignup() {
           </div>
 
           <GlowingButton
+            particles={true}
             type="submit"
             name="subscribe"
             id="mc-embedded-subscribe"

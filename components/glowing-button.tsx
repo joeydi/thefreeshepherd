@@ -1,10 +1,18 @@
+'use client'
+
 import { cn } from '@/utils/cn'
+import Particles from './particles'
+
+interface GlowingButtonProps extends React.ComponentPropsWithoutRef<'button'> {
+  particles?: boolean
+}
 
 export function GlowingButton({
+  particles = false,
   children = 'Submit',
   className,
   ...rest
-}: React.ComponentPropsWithoutRef<'button'>) {
+}: GlowingButtonProps) {
   return (
     <button
       type="submit"
@@ -25,6 +33,9 @@ export function GlowingButton({
         className="absolute inset-0 scale-y-100 animate-pulse rounded-sm bg-[#5dede3]/30 blur-xl transition-colors group-hover:bg-[#5dede3]"
         style={{ animationDelay: '2.66s' }}
       />
+      <div className="group-hover:duration:250 opacity-0 transition-opacity duration-1000 group-hover:opacity-100">
+        {particles && <Particles />}
+      </div>
     </button>
   )
 }

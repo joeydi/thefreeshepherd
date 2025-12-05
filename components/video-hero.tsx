@@ -132,7 +132,7 @@ export default function VideoHero() {
           <div ref={ctaRef} className="z-1">
             <BlurUp className="rounded-fluid-xs flex items-center gap-4 bg-black/10 p-4 pl-8 inset-ring-1 inset-ring-white/10 backdrop-blur-md">
               <span className="mr-auto font-semibold text-white">Coming Spring 2027</span>
-              <GlowingButton className="min-w-48">
+              <GlowingButton particles={true} className="min-w-48">
                 <Image
                   className="size-8"
                   src="/icons/playstation.svg"
@@ -143,7 +143,7 @@ export default function VideoHero() {
                 />
                 <span className="font-semibold">PlayStation</span>
               </GlowingButton>
-              <GlowingButton className="min-w-48">
+              <GlowingButton particles={true} className="min-w-48">
                 <Image
                   className="size-8"
                   src="/icons/steam.svg"
