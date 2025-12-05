@@ -163,8 +163,8 @@ export default function VideoHero() {
         <div className="absolute bottom-0 left-0 h-[20vh] w-full bg-linear-to-b from-[#282B2A]/0 to-[#282B2A]"></div>
         <div className="absolute bottom-0 left-0 h-[10vh] w-full bg-linear-to-b from-[#282B2A]/0 to-[#282B2A]"></div>
       </div>
+      <div className="absolute top-full left-0 h-[40vh] w-full bg-linear-to-t from-[#282B2A]/0 to-[#282B2A]"></div>
       <div className="absolute top-full left-0 h-[20vh] w-full bg-linear-to-t from-[#282B2A]/0 to-[#282B2A]"></div>
-      <div className="absolute top-full left-0 h-[10vh] w-full bg-linear-to-t from-[#282B2A]/0 to-[#282B2A]"></div>
     </div>
   )
 }
