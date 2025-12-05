@@ -13,7 +13,7 @@ const cards = [
     description:
       'A deep look into the creative process behind the haunting, cello-driven soundscape that shapes the soul of The Free Shepherd.',
     image: '/excerpt-zoe-keating.jpg',
-    link: '/updates/test',
+    link: '/updates/interview-with-zoe-keating',
   },
   {
     title: 'Your new best friend',
@@ -27,7 +27,7 @@ const cards = [
     description:
       'An inside look at new environments, worldbuilding tools, and the evolving systems shaping the next chapter of development.',
     image: '/excerpt-devlog.jpg',
-    link: '/updates/test',
+    link: '/updates/dev-log-winter-2026',
   },
 ]
 
