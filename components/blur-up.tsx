@@ -33,7 +33,7 @@ export function BlurUp({ children, reset = true, className = '', ...rest }: Blur
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out-sharp ${className}`}
+      className={`ease-out-sharp transition-[opacity,transform,filter] duration-1000 ${className}`}
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'scale(1)' : 'scale(0.9)',
