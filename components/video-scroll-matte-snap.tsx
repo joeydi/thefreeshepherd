@@ -13,7 +13,6 @@ export default function VideoScrollMatteSnap() {
   const [maskActive2, setMaskActive2] = useState<boolean | null>(null)
   const [maskActive3, setMaskActive3] = useState<boolean | null>(null)
   const [maskActive4, setMaskActive4] = useState<boolean | null>(null)
-  const [maskActive5, setMaskActive5] = useState<boolean | null>(null)
 
   const panel1 = useRef<HTMLDivElement>(null)
   const video1 = useRef<HTMLVideoElement>(null)
@@ -28,6 +27,7 @@ export default function VideoScrollMatteSnap() {
   const video4 = useRef<HTMLVideoElement>(null)
   const heading4 = useRef<HTMLHeadingElement>(null)
   const panel5 = useRef<HTMLDivElement>(null)
+  const panel5Overlay = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
     gsap
@@ -136,11 +136,11 @@ export default function VideoScrollMatteSnap() {
         start: 'top top',
         end: 'bottom top',
         scrub: true,
-        onEnter: () => {
-          setMaskActive5(true)
-        },
-        onLeaveBack: () => {
-          setMaskActive5(false)
+        onUpdate: (self) => {
+          const y = gsap.utils.snap(1 / 31, self.progress)
+          if (panel5Overlay.current) {
+            panel5Overlay.current.style.maskPosition = `50% ${y * 100}%`
+          }
         },
       },
     })
@@ -255,14 +255,13 @@ export default function VideoScrollMatteSnap() {
       </div>
       <div ref={panel5} className="h-screen">
         <div
+          ref={panel5Overlay}
           style={{
             maskImage: 'url(/ink-matte-flat-bottom.jpg)',
             maskMode: 'luminance',
             maskSize: '100% 3200%',
           }}
-          className={`fixed inset-0 block h-screen w-full bg-[#282B2A] object-cover ${
-            maskActive5 === null ? 'mask-initial' : maskActive5 ? 'mask-reveal' : 'mask-hide'
-          }`}
+          className={`fixed inset-0 block h-screen w-full bg-[#282B2A] object-cover`}
         ></div>
       </div>
     </div>
