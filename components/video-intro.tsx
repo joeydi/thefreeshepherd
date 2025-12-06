@@ -61,7 +61,7 @@ export default function VideoIntro() {
   }, [])
 
   return (
-    <div ref={sectionRef} className="px-md mb-[75vh] flex h-screen justify-center">
+    <div ref={sectionRef} className="px-md mb-[50vh] flex h-screen justify-center">
       <h1
         ref={headingRef}
         className="text-center font-serif text-2xl leading-normal font-medium text-balance"
