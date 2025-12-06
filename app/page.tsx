@@ -39,7 +39,7 @@ export default async function Home() {
       <VideoScrollMatteSnap />
       <Container className="gap-xl relative z-2 flex flex-col">
         <div id="trailer" className="flex items-center justify-center">
-          <BlurUp className="w-full max-w-7xl">
+          <BlurUp className="max-w-8xl w-full">
             <iframe
               className="rounded-fluid-xs aspect-video h-auto w-full shadow-lg"
               width="560"
