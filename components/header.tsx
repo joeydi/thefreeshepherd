@@ -11,18 +11,18 @@ export default function Header() {
         {/* Glass + border */}
         <div className="rounded-fluid-xs absolute inset-0 z-1 bg-linear-to-b from-white/50 to-white/20 inset-ring-1 inset-ring-white/20 backdrop-blur-md" />
 
+        <Particles />
+
         {/* Outer glow layers */}
-        <div className="rounded-fluid-xs absolute inset-0 scale-120 animate-pulse bg-[#5dede3]/30 blur-3xl" />
+        <div className="rounded-fluid-xs absolute inset-0 scale-120 animate-pulse bg-[#5dede3]/30 blur-2xl" />
         <div
-          className="rounded-fluid-xs absolute inset-0 scale-110 animate-pulse bg-[#5dede3]/20 blur-2xl"
+          className="rounded-fluid-xs absolute inset-0 scale-110 animate-pulse bg-[#5dede3]/20 blur-xl"
           style={{ animationDelay: '1.33s' }}
         />
         <div
           className="rounded-fluid-xs absolute inset-0 scale-100 animate-pulse bg-[#5dede3]/10 blur-lg"
           style={{ animationDelay: '2.66s' }}
         />
-
-        <Particles />
 
         {/* Content */}
         <div className="relative z-1 flex items-center justify-between gap-8 font-serif text-[#282B2A]">
